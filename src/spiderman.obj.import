@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/spiderman.obj-c3216a12568f48daf64ef311ca5f7e43.mesh"
+
+[deps]
+
+files=[ "res://.import/spiderman.obj-c3216a12568f48daf64ef311ca5f7e43.mesh" ]
+
+source_file="res://spiderman.obj"
+dest_files=[ "res://.import/spiderman.obj-c3216a12568f48daf64ef311ca5f7e43.mesh", "res://.import/spiderman.obj-c3216a12568f48daf64ef311ca5f7e43.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

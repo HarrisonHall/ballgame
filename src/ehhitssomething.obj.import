@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ehhitssomething.obj-c4a44a643287774c68f5d8a6d540c364.mesh"
+
+[deps]
+
+files=[ "res://.import/ehhitssomething.obj-c4a44a643287774c68f5d8a6d540c364.mesh" ]
+
+source_file="res://ehhitssomething.obj"
+dest_files=[ "res://.import/ehhitssomething.obj-c4a44a643287774c68f5d8a6d540c364.mesh", "res://.import/ehhitssomething.obj-c4a44a643287774c68f5d8a6d540c364.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

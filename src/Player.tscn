@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://marble_test.png" type="Texture" id=2]
+[ext_resource path="res://p_area.gd" type="Script" id=3]
+[ext_resource path="res://level_start_hud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://textures/normal_eyes.png" type="Texture" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+params_billboard_mode = 3
+params_billboard_keep_scale = true
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.5
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SphereMesh" id=3]
+
+[sub_resource type="SphereShape" id=4]
+
+[sub_resource type="SphereShape" id=5]
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="ball_sprite" type="AnimatedSprite3D" parent="."]
+editor/display_folded = true
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0 )
+material_override = SubResource( 1 )
+shaded = true
+alpha_cut = 2
+frames = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="ball_sprite"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 0.3, 0, 0, 0 )
+cast_shadow = 3
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="player_body" type="CollisionShape" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="trail_geometry" type="ImmediateGeometry" parent="."]
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="p_camera" type="Camera" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+current = true
+far = 1200.0
+script = ExtResource( 3 )
+
+[node name="Area" type="Area" parent="Spatial/p_camera"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/p_camera/Area"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="level_start_hud" parent="Spatial/p_camera" instance=ExtResource( 4 )]
+
+[node name="eyes_center" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="eyes" type="Sprite3D" parent="eyes_center"]
+transform = Transform( -1.74846e-07, 0, -1, 0, 4, 0, 4, 0, -4.37114e-08, 0.294184, 0, 0 )
+texture = ExtResource( 5 )

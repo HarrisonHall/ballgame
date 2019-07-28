@@ -1,0 +1,378 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://base_platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://rise.tscn" type="PackedScene" id=3]
+[ext_resource path="res://base_platform2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://lamp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://cat_model.tscn" type="PackedScene" id=6]
+[ext_resource path="res://jaw_model.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ballman.tscn" type="PackedScene" id=8]
+[ext_resource path="res://moving_platform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://g_sign.tscn" type="PackedScene" id=10]
+[ext_resource path="res://speed_boost.tscn" type="PackedScene" id=11]
+[ext_resource path="res://cockzilla.tscn" type="PackedScene" id=12]
+[ext_resource path="res://teleporter.tscn" type="PackedScene" id=13]
+[ext_resource path="res://bounce.tscn" type="PackedScene" id=14]
+[ext_resource path="res://kaleb_tree.tscn" type="PackedScene" id=15]
+[ext_resource path="res://death_plane.tscn" type="PackedScene" id=16]
+[ext_resource path="res://kaleb_house.tscn" type="PackedScene" id=17]
+[ext_resource path="res://basic water.tscn" type="PackedScene" id=18]
+[ext_resource path="res://spiderman.tscn" type="PackedScene" id=19]
+[ext_resource path="res://paintbrush.tscn" type="PackedScene" id=20]
+[ext_resource path="res://kaleb_cone.tscn" type="PackedScene" id=21]
+[ext_resource path="res://canvas.tscn" type="PackedScene" id=22]
+[ext_resource path="res://painting_mountain.tscn" type="PackedScene" id=23]
+[ext_resource path="res://pallette.tscn" type="PackedScene" id=24]
+[ext_resource path="res://GodzillaBetter.dae" type="PackedScene" id=25]
+[ext_resource path="res://specialguest.dae" type="PackedScene" id=26]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=27]
+[ext_resource path="res://checkpoint.tscn" type="PackedScene" id=28]
+[ext_resource path="res://test_base.tscn" type="PackedScene" id=29]
+[ext_resource path="res://treeing2.tscn" type="PackedScene" id=30]
+[ext_resource path="res://base_collectible.tscn" type="PackedScene" id=31]
+
+[sub_resource type="ProceduralSky" id=1]
+
+[sub_resource type="Environment" id=2]
+background_mode = 3
+background_sky = SubResource( 1 )
+background_color = Color( 0.192157, 0.172549, 0.211765, 1 )
+background_energy = 0.3
+ambient_light_color = Color( 1, 1, 1, 1 )
+
+[node name="debug" type="Spatial"]
+
+[node name="level" type="Spatial" parent="."]
+
+[node name="ground" parent="level" instance=ExtResource( 1 )]
+editor/display_folded = true
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 15, 6.93994, 0.0145895, 0.0351391 )
+
+[node name="ground2" parent="level/ground" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 20, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="tree2" parent="level/ground" instance=ExtResource( 2 )]
+transform = Transform( -0.0240538, 0, -0.0970641, 0, 1, 0, 0.0647093, 0, -0.0160359, -0.393993, -0.0145895, -0.535676 )
+
+[node name="tree3" parent="level/ground" instance=ExtResource( 2 )]
+transform = Transform( -0.0240538, 0, -0.0970641, 0, 1, 0, 0.0647093, 0, -0.0160359, 1.24133, -0.0145895, -2.81102 )
+
+[node name="tree1" parent="level/ground" instance=ExtResource( 2 )]
+transform = Transform( -0.0240538, 0, -0.0970641, 0, 1, 0, 0.0647093, 0, -0.0160359, -0.174095, -0.0145895, 0.664324 )
+
+[node name="ramp" parent="level/ground" instance=ExtResource( 3 )]
+transform = Transform( -4.37115e-09, 0, 0.0999999, 0, 1, 0, -0.0666667, 0, -2.91409e-09, -0.417462, -0.0493265, 0.725814 )
+
+[node name="ramp3" parent="level/ground" instance=ExtResource( 3 )]
+transform = Transform( -4.37115e-09, 0, 0.0999999, 0, 1, 0, -0.0666667, 0, -2.91409e-09, -1.97223, -0.0493265, 0.725814 )
+
+[node name="ramp4" parent="level/ground" instance=ExtResource( 3 )]
+transform = Transform( 0.00134131, 0, -0.0999909, 0, 1, 0, 0.0666607, 0, 0.000894203, -2.61692, -0.0493265, -0.551984 )
+
+[node name="ramp_sky" parent="level/ground" instance=ExtResource( 3 )]
+transform = Transform( 1.3498e-08, 0, -0.3, 0, 1, 0, 0.067, 0, 6.71544e-07, -0.173931, 11.8666, 0.481944 )
+
+[node name="ramp_sky2" parent="level/ground" instance=ExtResource( 3 )]
+transform = Transform( -2.24436e-08, 0, 0.06, 0, 3, 0, -0.067, 0, -2.23319e-07, 0.630193, 9.60618, -0.133516 )
+
+[node name="ramp_sky3" parent="level/ground" instance=ExtResource( 3 )]
+transform = Transform( -2.24436e-08, 0, 0.06, 0, 3, 0, -0.067, 0, -2.23319e-07, 0.630732, 8.99188, -0.429928 )
+
+[node name="ramp_sky4" parent="level/ground" instance=ExtResource( 3 )]
+transform = Transform( -2.24436e-08, 0, 0.06, 0, 5, 0, -0.067, 0, -2.23319e-07, 0.630732, 3.11291, -0.716804 )
+
+[node name="platform1" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.0999999, 0, 0, 0, 1, 0, 0, 0, 0.0666667, -0.0939939, 1.98541, -0.00234261 )
+
+[node name="large platform" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.3, 0, 0, 0, 1, 0, 0, 0, 0.2, -0.134451, 2.68951, 1.67262 )
+
+[node name="large platform2" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.2, 0, 0, 0, 10, 0, 0, 0, 0.0666667, -0.0327573, 3.68951, 2.00885 )
+
+[node name="large platform3" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.0399999, 0, 0, 0, 2, 0, 0, 0, 0.133333, 0.36555, 7.39444, 1.80596 )
+
+[node name="large platform4" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.0399999, 0, 0, 0, 2, 0, 0, 0, 0.133333, 0.36555, 9.68951, 1.13929 )
+
+[node name="large platform5" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.2, 0, 0, 0, 2, 0, 0, 0, 0.0666667, 0.125626, 11.6895, 0.739291 )
+
+[node name="large platform6" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.2, 0, 0, 0, 2, 0, 0, 0, 0.0666667, 0.125626, 12.6684, 0.170269 )
+
+[node name="large platform7" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.2, 0, 0, 0, 2, 0, 0, 0, 0.0666667, 0.133446, 23.331, 0.171941 )
+
+[node name="large platform11" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.15, 0, 0, 0, 2, 0, 0, 0, 0.1, 1.94081, 19.5326, 2.45965 )
+
+[node name="large platform8" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.015, 0, 0, 0, 2, 0, 0, 0, 0.2, 0.0488943, 23.2997, 1.74504 )
+
+[node name="large platform9" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.015, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0488943, 32.3167, 2.21714 )
+
+[node name="Spatial" parent="level/ground" instance=ExtResource( 5 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, 2.50865, 5.98541, -1.13568 )
+
+[node name="Spatial6" parent="level/ground" instance=ExtResource( 5 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, 2.48188, 5.98541, -2.58478 )
+
+[node name="cat" parent="level/ground" instance=ExtResource( 6 )]
+transform = Transform( 0.1, 0, 0, 0, 0.5, 0, 0, 0, 0.0666667, -0.693994, -0.0145895, -2.46901 )
+
+[node name="ramp2" parent="level/ground" instance=ExtResource( 3 )]
+transform = Transform( 8.47574e-09, 0, -0.15, 0, 5, 0, 0.09, 0, 1.56958e-07, -0.6, 4.84288e-08, -1.2 )
+
+[node name="cat2" parent="level/ground" instance=ExtResource( 6 )]
+transform = Transform( 0.03, 0, 0, 0, 0.3, 0, 0, 0, 0.02, 0.006006, -0.0145895, -2.46901 )
+
+[node name="Spatial2" parent="level/ground" instance=ExtResource( 7 )]
+transform = Transform( -0.0114715, 0, 0.016383, 0, 0.2, 0, -0.010922, 0, -0.00764767, 0.606006, -0.529909, -2.06901 )
+
+[node name="Spatial3" parent="level/ground" instance=ExtResource( 8 )]
+transform = Transform( 0.0429194, 0, -0.0903212, 0, 1, 0, 0.0602141, 0, 0.0286129, 0.608936, 13.0601, 0.243296 )
+
+[node name="Spatial4" parent="level/ground" instance=ExtResource( 3 )]
+transform = Transform( -0.00871558, 0, -0.0996195, 0, 2, 0, 0.066413, 0, -0.00581039, -0.0939941, 0.0160192, -1.13568 )
+
+[node name="moving_platform" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, -0.628346, 12.3326, 0.144387 )
+move_side_velocity = Vector3( 0, 0, 0 )
+
+[node name="moving_platform2" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, -0.628346, 23.0825, 0.372991 )
+move_up_velocity = Vector3( 0, -1, 0 )
+move_side_velocity = Vector3( 0, 0, 0 )
+
+[node name="moving_platform9" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, -0.628346, 23.0825, 2.50633 )
+move_up_velocity = Vector3( 0, -1, 0 )
+move_side_velocity = Vector3( 0, 0, 0 )
+
+[node name="moving_platform8" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0.0583429, 23.0825, 2.48036 )
+move_time = 9
+move_side_velocity = Vector3( 0, 0, 0 )
+
+[node name="moving_platform10" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.09, 0, 0, 0, 0.999999, -7.07507e-05, 0, 0.00141501, 0.05, 0.0583429, 32.1987, 2.01647 )
+move_time = 10
+
+[node name="moving_platform11" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.999999, -0.000424504, 0, 0.00141501, 0.3, 2.3435, 7.09536, 2.04453 )
+move_time = 25
+move_side_velocity = Vector3( 0, 0, -1 )
+
+[node name="moving_platform3" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, 0.251291, 23.3038, 0.437692 )
+move_up_velocity = Vector3( 0, 0, 0 )
+move_side_velocity = Vector3( 0, 0, 1 )
+
+[node name="moving_platform4" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, 0.0537525, 23.3038, 1.08234 )
+move_up_velocity = Vector3( 0, 0, 0 )
+move_side_velocity = Vector3( 0, 0, -1 )
+
+[node name="moving_platform6" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.0999, 0, 0, 0, 10, 0, 0, 0, 0.067, 0.268991, 25.5201, 1.89505 )
+move_time = 4
+move_up_velocity = Vector3( 0, 0, 0 )
+move_side_velocity = Vector3( -1, 0, 0 )
+
+[node name="moving_platform5" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.0999, 0, 0, 0, 10, 0, 0, 0, 0.067, 0.268991, 25.5201, 1.3519 )
+move_time = 4
+move_up_velocity = Vector3( 0, 0, 0 )
+move_side_velocity = Vector3( -1, 0, 0 )
+
+[node name="moving_platform7" parent="level/ground" instance=ExtResource( 9 )]
+transform = Transform( 0.0999, 0, 0, 0, 10, 0, 0, 0, 0.067, -0.278874, 25.5201, 1.60822 )
+move_time = 4
+move_up_velocity = Vector3( 0, 0, 0 )
+move_side_velocity = Vector3( 2, 0, 0 )
+
+[node name="large platform10" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.15, 0, 0, 0, 2, 0, 0, 0, 0.1, 2.63424, 32.6636, 0.170269 )
+
+[node name="Spatial5" parent="level/ground" instance=ExtResource( 10 )]
+transform = Transform( 0.00377703, 0, -0.0297613, 0, 0.4, 0, 0.0198409, 0, 0.00251802, 2.85731, 34.3949, 0.170269 )
+
+[node name="large platform16" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.15, 0, 0, 0, 2, 0, 0, 0, 0.1, 2.63424, 37.0027, 0.170269 )
+
+[node name="large platform12" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.03, 0, 0, 0, 20, 0, 0, 0, 0.1, 2.27088, 34.8792, 0.170269 )
+
+[node name="large platform13" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.03, 0, 0, 0, 20, 0, 0, 0, 0.1, 2.99227, 34.8792, 0.170269 )
+
+[node name="large platform14" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.09, 0, 0, 0, 20, 0, 0, 0, 0.02, 2.63143, 34.8792, -0.0707979 )
+
+[node name="large platform15" parent="level/ground" instance=ExtResource( 4 )]
+transform = Transform( 0.06, 0, 0, 0, 20, 0, 0, 0, 0.02, 2.72297, 34.8792, 0.411386 )
+
+[node name="boost" parent="level/ground" instance=ExtResource( 11 )]
+transform = Transform( 0.1, 0, 0, 0, 0.3, 0, 0, 0, 1, -1.60782, -0.0145895, -0.663047 )
+
+[node name="boost6" parent="level/ground" instance=ExtResource( 11 )]
+transform = Transform( 0.1, 0, 0, 0, 0.3, 0, 0, 0, 1, -2.61599, -0.0145895, 0.598457 )
+
+[node name="boost2" parent="level/ground" instance=ExtResource( 11 )]
+transform = Transform( 0.1, 0, 0, 0, 0.3, 0, 0, 0, 0.0666667, -2.20782, -0.0145895, -1.50669 )
+boost = 1.15
+
+[node name="boost3" parent="level/ground" instance=ExtResource( 11 )]
+transform = Transform( 0.1, 0, 0, 0, 0.3, 0, 0, 0, 0.0666667, -2.20782, -0.0145895, -1.23016 )
+boost = 1.15
+
+[node name="boost4" parent="level/ground" instance=ExtResource( 11 )]
+transform = Transform( 0.1, 0, 0, 0, 0.3, 0, 0, 0, 0.0666667, -2.20782, -0.0145895, -0.936083 )
+boost = 1.15
+
+[node name="boost5" parent="level/ground" instance=ExtResource( 11 )]
+transform = Transform( 0.1, 0, 0, 0, 0.0938593, 0.345026, 0, -0.00230017, 0.0625729, -1.96414, 0.564487, 0.744224 )
+boost = 1.5
+
+[node name="boost7" parent="level/ground" instance=ExtResource( 11 )]
+transform = Transform( -0.0997836, 0.000226848, -0.00617107, 0, 0.0938593, 0.345026, 0.00438321, 0.0022952, -0.0624375, -2.61487, 0.564487, -0.56425 )
+boost = 1.7
+
+[node name="zilla" parent="level/ground" instance=ExtResource( 12 )]
+transform = Transform( -0.0650499, 0, -0.0759507, 0, 1, 0, 0.0506338, 0, -0.0433666, -2.2744, 0.428858, -2.56289 )
+
+[node name="teleporter" parent="level/ground/zilla" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 5, 0, -2.98023e-08, 0, 1, -0.022438, 3.95193, 3.75096 )
+teleport_to = Vector3( 16, 17, 70 )
+
+[node name="zilla2" parent="level/ground" instance=ExtResource( 12 )]
+transform = Transform( -0.0194585, 0, -0.00462253, 0, 0.2, 0, 0.00308169, 0, -0.0129723, -1.43907, 0.428858, -2.40025 )
+
+[node name="Spatial7" parent="level/ground" instance=ExtResource( 14 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, -1.33149, -0.616686, 0.665264 )
+
+[node name="Spatial8" parent="level/ground" instance=ExtResource( 14 )]
+transform = Transform( 0.1, 0, 0, 0, 0.841617, 0.540074, 0, -0.0360049, 0.0561078, -2.62361, -0.392666, 1.67551 )
+
+[node name="Spatial9" parent="level/ground" instance=ExtResource( 14 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, -0.399424, -0.526838, 2.4483 )
+
+[node name="kalebtree2" parent="level/ground" instance=ExtResource( 15 )]
+transform = Transform( -0.802438, 0, 0.0596736, 0, 10, 0, -0.397824, 0, -0.0534959, 0.754075, 0.10107, -2.80622 )
+
+[node name="death_plane" parent="level/ground" instance=ExtResource( 16 )]
+transform = Transform( 20, 0, 0, 0, 3, 0, 0, 0, 13.3333, -0.693994, -3.95557, 0.0107424 )
+
+[node name="Spatial10" parent="level/ground" instance=ExtResource( 17 )]
+transform = Transform( -4.76837e-08, 0, 0.1, 0, 20, 0, -1.33333, 0, -1.98682e-09, -2.89399, -0.0145895, 0.530991 )
+
+[node name="basic water" parent="level/ground" instance=ExtResource( 18 )]
+transform = Transform( 0.3, 0, 0, 0, 1, 0, 0, 0, 0.2, -0.693994, -2.11466, -0.00234261 )
+
+[node name="Spatial11" parent="level/ground" instance=ExtResource( 19 )]
+transform = Transform( 0.0906308, 0, -0.0422618, 0, 1, 0, 0.0281746, 0, 0.0604205, 2.50601, -0.0145895, -2.60234 )
+
+[node name="paintbrush1" parent="level/ground" instance=ExtResource( 20 )]
+transform = Transform( -0.0439277, -0.0736663, -0.0514162, -0.816684, 0.0890349, 0.570175, -0.0249499, 0.0446916, -0.0427155, 2.78711, -0.0145895, 2.33752 )
+
+[node name="paintbrush3" parent="level/ground" instance=ExtResource( 20 )]
+transform = Transform( -0.049279, -0.0621753, -0.0608754, -0.816684, 0.0890349, 0.570175, -0.0200205, 0.0518757, -0.0367768, 2.93399, -0.0145895, 2.67279 )
+
+[node name="paintbrush2" parent="level/ground" instance=ExtResource( 20 )]
+transform = Transform( 0.0600712, -0.0319434, 0.0732876, -0.756485, 0.0694108, 0.650317, -0.0172402, -0.0630042, -0.0133301, 2.01888, 0.40959, 2.95422 )
+
+[node name="paintbrush4" parent="level/ground" instance=ExtResource( 20 )]
+transform = Transform( 0.0600712, -0.0319434, 0.0732876, 0.209736, 0.947567, 0.241097, -0.0514309, 0.000592075, 0.0424141, 2.39871, -4.57725, 3.06823 )
+
+[node name="paintbrush5" parent="level/ground" instance=ExtResource( 20 )]
+transform = Transform( 0.0600712, -0.0319434, 0.0732876, -0.283918, -0.942191, -0.17795, 0.0498235, -0.00674536, -0.0437785, 3.22317, 0.407915, 2.89067 )
+
+[node name="Spatial12" parent="level/ground" instance=ExtResource( 21 )]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, -1.98682e-09, 0, 0.0666667, -2.17776, -0.0145924, -1.9583 )
+
+[node name="Spatial13" parent="level/ground" instance=ExtResource( 22 )]
+transform = Transform( -0.0746284, -1.86265e-08, 0.0665628, -3.50177e-07, 1, -1.39698e-08, -0.0443753, 7.94729e-09, -0.0497523, 2.60192, -0.235682, 2.82318 )
+
+[node name="mountain_painting" parent="level/ground" instance=ExtResource( 23 )]
+transform = Transform( 0.0676882, 0.0108891, 0.0727994, -0.0319254, 0.99241, -0.118758, -0.0490266, 0.0038096, 0.0450148, 2.58474, 2.81941, 2.81771 )
+
+[node name="Spatial14" parent="level/ground" instance=ExtResource( 24 )]
+transform = Transform( 0.0700369, 0.0106981, 0.0705718, -0.0319253, 0.99241, -0.118758, -0.0475377, 0.00404297, 0.0465647, 2.29941, 0.205887, 2.82524 )
+
+[node name="Scene Root" parent="level/ground" instance=ExtResource( 25 )]
+transform = Transform( 1.05, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, -6.68357, -4.96015 )
+
+[node name="Scene Root" parent="." instance=ExtResource( 26 )]
+transform = Transform( 0.000645846, 0, 0.0999979, 0, 0.1, 0, -0.0999979, 0, 0.000645846, -22.857, 0.119247, 8.73542 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 27 )]
+transform = Transform( -0.0284077, 0, -0.999596, 0, 1, 0, 0.999596, 0, -0.0284077, 3.55712, 2.49556, 0 )
+
+[node name="Spatial" parent="." instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62819, 1.84077, 2.05087 )
+
+[node name="base" parent="." instance=ExtResource( 29 )]
+editor/display_folded = true
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 16.3086, 11.6223, 70.4273 )
+
+[node name="teleporter" parent="base" instance=ExtResource( 13 )]
+transform = Transform( 0.0934527, 0, 0.0355891, 0, 0.1, 0, -0.0355891, 0, 0.0934527, 0.467651, 0.416171, 1.49009 )
+teleport_to = Vector3( 0, 10, 0 )
+
+[node name="Spatial" parent="base" instance=ExtResource( 5 )]
+transform = Transform( 0.0945639, -0.0316458, 0.0074978, 0, 0.0230546, 0.0973061, -0.0325219, -0.0920165, 0.0218013, 0, 0.582734, 0 )
+
+[node name="trees" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 0.000645846, 0, 0.0999979, 0, 0.1, 0, -0.0999979, 0, 0.000645846, -22.857, 0.119247, 8.73542 )
+
+[node name="treeing" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( 0.0645846, 0, -9.99979, 0, 10, 0, 9.99979, 0, 0.0645846, 151.941, -1.19247, 332.723 )
+
+[node name="treeing12" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( -6.84754, 0, 7.28774, 0, 10, 0, -7.28774, 0, -6.84754, 509.381, -1.19247, 471.456 )
+
+[node name="treeing3" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( 0.645846, 0, -99.9979, 0, 100, 0, 99.9979, 0, 0.645846, 144.589, -61.1925, 742.779 )
+
+[node name="treeing8" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( 71.1659, 0, -70.2526, 0, 100, 0, 70.2526, 0, 71.1659, -142.305, -61.1925, 1224.64 )
+
+[node name="treeing9" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( 71.1659, 0, -70.2526, 0, 150, 0, 70.2526, 0, 71.1659, -204.112, -61.1925, 945.035 )
+
+[node name="treeing4" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( 172.556, 0, 101.117, 0, 200, 0, -101.117, 0, 172.556, 365.812, -61.1925, 931.354 )
+
+[node name="treeing5" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( -172.556, 0, -101.117, 0, 200, 0, 101.117, 0, -172.556, -785.068, -271.192, 798.784 )
+
+[node name="treeing6" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( -172.556, 0, -101.117, 0, 200, 0, 101.117, 0, -172.556, -790.816, -271.192, -91.1974 )
+
+[node name="treeing7" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( -27.0007, 0, 147.55, 0, 250, 0, -147.55, 0, -27.0007, -412.762, -271.192, -393.646 )
+
+[node name="treeing10" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( -148.124, 0, 23.6464, 0, 250, 0, -23.6464, 0, -148.124, 251.426, -696.136, -224.305 )
+
+[node name="treeing11" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( -48.8906, 0, -141.809, 0, 250, 0, 141.809, 0, -48.8906, 88.0582, -696.136, -618.959 )
+
+[node name="treeing2" parent="trees" instance=ExtResource( 30 )]
+transform = Transform( 0.0645846, 0, -9.99979, 0, 10, 0, 9.99979, 0, 0.0645846, 7.24957, -1.19247, 230.103 )
+
+[node name="coins" type="Spatial" parent="."]
+
+[node name="base_collectible" parent="coins" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68256, 0.402141, 0 )
+
+[node name="base_collectible2" parent="coins" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32849, 2.34071, -2.05322 )

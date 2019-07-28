@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/busbeeobj.obj-4e971b03f06a82801f15e804c575268b.mesh"
+
+[deps]
+
+files=[ "res://.import/busbeeobj.obj-4e971b03f06a82801f15e804c575268b.mesh" ]
+
+source_file="res://busbeeobj.obj"
+dest_files=[ "res://.import/busbeeobj.obj-4e971b03f06a82801f15e804c575268b.mesh", "res://.import/busbeeobj.obj-4e971b03f06a82801f15e804c575268b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

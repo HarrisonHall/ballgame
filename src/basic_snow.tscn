@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+metallic_specular = 0.09
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 10, 1, 10 )
+spread = 156.85
+gravity = Vector3( 0, -1, 0 )
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 0.01, 0.01, 0.01 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.0555, 0 )
+material_override = SubResource( 1 )
+cast_shadow = 0
+amount = 15000
+lifetime = 15.0
+preprocess = 10.0
+speed_scale = 0.3
+randomness = 0.21
+visibility_aabb = AABB( -10.3996, -21.3757, -9.39965, 20.7992, 37.4292, 18.7993 )
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 3 )

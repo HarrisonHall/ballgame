@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/paintpallette.obj-b1957777e8b207446f79434a3cc5d7bd.mesh"
+
+[deps]
+
+files=[ "res://.import/paintpallette.obj-b1957777e8b207446f79434a3cc5d7bd.mesh" ]
+
+source_file="res://paintpallette.obj"
+dest_files=[ "res://.import/paintpallette.obj-b1957777e8b207446f79434a3cc5d7bd.mesh", "res://.import/paintpallette.obj-b1957777e8b207446f79434a3cc5d7bd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
