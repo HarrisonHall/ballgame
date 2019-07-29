@@ -90,9 +90,16 @@ func _process(delta):
 		if mouse_captured:
 			mouse_captured = false
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			player.pause = true
+			var pause_menu = ResourceLoader.load("res://pause_debug.tscn") 
+			var p = pause_menu.instance()
+			p.camera = self
+			p.player = player
+			get_tree().get_root().add_child(p)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			mouse_captured = true
+			player.pause = false
 	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = not OS.window_fullscreen
 	if len(cam_start_nodes) > 0:

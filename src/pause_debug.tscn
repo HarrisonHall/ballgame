@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://pause_debug.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="debug" type="Button" parent="."]
+margin_left = 61.5382
+margin_top = 213.189
+margin_right = 225.538
+margin_bottom = 277.189
+text = "DEBUG"
+
+[node name="mountain" type="Button" parent="."]
+margin_left = 58.9536
+margin_top = 316.577
+margin_right = 222.953
+margin_bottom = 380.577
+text = "Blizzardo Peak"
+
+[node name="exit" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -193.51
+margin_top = -88.2769
+margin_right = -29.5104
+margin_bottom = -24.2769
+text = "EXIT"
+[connection signal="pressed" from="debug" to="." method="_on_debug_pressed"]
+[connection signal="pressed" from="mountain" to="." method="_on_mountain_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

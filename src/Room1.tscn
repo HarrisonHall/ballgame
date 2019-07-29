@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://base_platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tree.tscn" type="PackedScene" id=2]
@@ -22,15 +22,18 @@
 [ext_resource path="res://paintbrush.tscn" type="PackedScene" id=20]
 [ext_resource path="res://kaleb_cone.tscn" type="PackedScene" id=21]
 [ext_resource path="res://canvas.tscn" type="PackedScene" id=22]
-[ext_resource path="res://painting_mountain.tscn" type="PackedScene" id=23]
-[ext_resource path="res://pallette.tscn" type="PackedScene" id=24]
-[ext_resource path="res://GodzillaBetter.dae" type="PackedScene" id=25]
-[ext_resource path="res://specialguest.dae" type="PackedScene" id=26]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=27]
-[ext_resource path="res://checkpoint.tscn" type="PackedScene" id=28]
-[ext_resource path="res://test_base.tscn" type="PackedScene" id=29]
-[ext_resource path="res://treeing2.tscn" type="PackedScene" id=30]
-[ext_resource path="res://base_collectible.tscn" type="PackedScene" id=31]
+[ext_resource path="res://stoat_test.tscn" type="PackedScene" id=23]
+[ext_resource path="res://painting_mountain.tscn" type="PackedScene" id=24]
+[ext_resource path="res://pallette.tscn" type="PackedScene" id=25]
+[ext_resource path="res://GodzillaBetter.dae" type="PackedScene" id=26]
+[ext_resource path="res://death_bush.tscn" type="PackedScene" id=27]
+[ext_resource path="res://fence1.tscn" type="PackedScene" id=28]
+[ext_resource path="res://specialguest.dae" type="PackedScene" id=29]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=30]
+[ext_resource path="res://checkpoint.tscn" type="PackedScene" id=31]
+[ext_resource path="res://test_base.tscn" type="PackedScene" id=32]
+[ext_resource path="res://treeing2.tscn" type="PackedScene" id=33]
+[ext_resource path="res://base_collectible.tscn" type="PackedScene" id=34]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -243,6 +246,7 @@ transform = Transform( -0.0997836, 0.000226848, -0.00617107, 0, 0.0938593, 0.345
 boost = 1.7
 
 [node name="zilla" parent="level/ground" instance=ExtResource( 12 )]
+editor/display_folded = true
 transform = Transform( -0.0650499, 0, -0.0759507, 0, 1, 0, 0.0506338, 0, -0.0433666, -2.2744, 0.428858, -2.56289 )
 
 [node name="teleporter" parent="level/ground/zilla" instance=ExtResource( 13 )]
@@ -277,13 +281,13 @@ transform = Transform( 0.3, 0, 0, 0, 1, 0, 0, 0, 0.2, -0.693994, -2.11466, -0.00
 transform = Transform( 0.0906308, 0, -0.0422618, 0, 1, 0, 0.0281746, 0, 0.0604205, 2.50601, -0.0145895, -2.60234 )
 
 [node name="paintbrush1" parent="level/ground" instance=ExtResource( 20 )]
-transform = Transform( -0.0439277, -0.0736663, -0.0514162, -0.816684, 0.0890349, 0.570175, -0.0249499, 0.0446916, -0.0427155, 2.78711, -0.0145895, 2.33752 )
+transform = Transform( -0.0602138, -0.0301843, -0.0739135, -0.780958, 0.0302692, 0.623849, -0.0110621, 0.0635252, -0.0169303, 2.88711, 0.344856, 2.07085 )
 
 [node name="paintbrush3" parent="level/ground" instance=ExtResource( 20 )]
 transform = Transform( -0.049279, -0.0621753, -0.0608754, -0.816684, 0.0890349, 0.570175, -0.0200205, 0.0518757, -0.0367768, 2.93399, -0.0145895, 2.67279 )
 
 [node name="paintbrush2" parent="level/ground" instance=ExtResource( 20 )]
-transform = Transform( 0.0600712, -0.0319434, 0.0732876, -0.756485, 0.0694108, 0.650317, -0.0172402, -0.0630042, -0.0133301, 2.01888, 0.40959, 2.95422 )
+transform = Transform( 0.0600712, -0.0319434, 0.0732876, -0.773248, 0.000688747, 0.634103, -0.0135373, -0.0631739, -0.0164392, 2.01888, 0.40959, 2.95422 )
 
 [node name="paintbrush4" parent="level/ground" instance=ExtResource( 20 )]
 transform = Transform( 0.0600712, -0.0319434, 0.0732876, 0.209736, 0.947567, 0.241097, -0.0514309, 0.000592075, 0.0424141, 2.39871, -4.57725, 3.06823 )
@@ -297,28 +301,46 @@ transform = Transform( 0.1, 0, 0, 0, 1, 0, -1.98682e-09, 0, 0.0666667, -2.17776,
 [node name="Spatial13" parent="level/ground" instance=ExtResource( 22 )]
 transform = Transform( -0.0746284, -1.86265e-08, 0.0665628, -3.50177e-07, 1, -1.39698e-08, -0.0443753, 7.94729e-09, -0.0497523, 2.60192, -0.235682, 2.82318 )
 
-[node name="mountain_painting" parent="level/ground" instance=ExtResource( 23 )]
-transform = Transform( 0.0676882, 0.0108891, 0.0727994, -0.0319254, 0.99241, -0.118758, -0.0490266, 0.0038096, 0.0450148, 2.58474, 2.81941, 2.81771 )
+[node name="Scene Root2" parent="level/ground" instance=ExtResource( 23 )]
+transform = Transform( 0.0954689, 0.00400525, 0.0294897, -0.0505097, 0.998333, 0.027925, -0.0195525, -0.00277029, 0.0636748, 1.68475, 0.0939658, 2.81771 )
 
-[node name="Spatial14" parent="level/ground" instance=ExtResource( 24 )]
+[node name="paintbrush6" parent="level/ground" instance=ExtResource( 20 )]
+transform = Transform( -0.00401887, -0.00922904, -0.00836642, -0.0979779, 0.00442041, 0.00467948, -0.00492401, 0.00292745, -0.00815037, 1.67307, 1.29431, 2.70548 )
+
+[node name="mountain_painting" parent="level/ground" instance=ExtResource( 24 )]
+transform = Transform( 0.0677744, 0.00753499, 0.0731428, -0.0141369, 0.995887, -0.0894949, -0.0490108, 0.00335433, 0.0450682, 2.58474, 2.6752, 2.81771 )
+
+[node name="Spatial14" parent="level/ground" instance=ExtResource( 25 )]
 transform = Transform( 0.0700369, 0.0106981, 0.0705718, -0.0319253, 0.99241, -0.118758, -0.0475377, 0.00404297, 0.0465647, 2.29941, 0.205887, 2.82524 )
 
-[node name="Scene Root" parent="level/ground" instance=ExtResource( 25 )]
+[node name="Spatial15" parent="level/ground" instance=ExtResource( 25 )]
+transform = Transform( 0.00774173, 0.0297616, 0.00558642, -0.00352896, 0.0935616, -9.40082e-05, -0.00525472, -0.0189864, 0.00829356, 1.60978, 0.205887, 2.74954 )
+
+[node name="Scene Root" parent="level/ground" instance=ExtResource( 26 )]
 transform = Transform( 1.05, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, -6.68357, -4.96015 )
 
-[node name="Scene Root" parent="." instance=ExtResource( 26 )]
+[node name="Spatial" parent="level" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2296, 0.799697, -9.52218 )
+
+[node name="Scene Root2" parent="level/Spatial" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80521, -0.914686, 3.62589 )
+
+[node name="Scene Root3" parent="level/Spatial" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80521, -0.914686, 6.78026 )
+
+[node name="Scene Root" parent="." instance=ExtResource( 29 )]
 transform = Transform( 0.000645846, 0, 0.0999979, 0, 0.1, 0, -0.0999979, 0, 0.000645846, -22.857, 0.119247, 8.73542 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 27 )]
+[node name="Player" parent="." instance=ExtResource( 30 )]
 transform = Transform( -0.0284077, 0, -0.999596, 0, 1, 0, 0.999596, 0, -0.0284077, 3.55712, 2.49556, 0 )
 
-[node name="Spatial" parent="." instance=ExtResource( 28 )]
+[node name="Spatial" parent="." instance=ExtResource( 31 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62819, 1.84077, 2.05087 )
 
-[node name="base" parent="." instance=ExtResource( 29 )]
+[node name="base" parent="." instance=ExtResource( 32 )]
 editor/display_folded = true
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 16.3086, 11.6223, 70.4273 )
 
@@ -333,46 +355,46 @@ transform = Transform( 0.0945639, -0.0316458, 0.0074978, 0, 0.0230546, 0.0973061
 editor/display_folded = true
 transform = Transform( 0.000645846, 0, 0.0999979, 0, 0.1, 0, -0.0999979, 0, 0.000645846, -22.857, 0.119247, 8.73542 )
 
-[node name="treeing" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( 0.0645846, 0, -9.99979, 0, 10, 0, 9.99979, 0, 0.0645846, 151.941, -1.19247, 332.723 )
 
-[node name="treeing12" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing12" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( -6.84754, 0, 7.28774, 0, 10, 0, -7.28774, 0, -6.84754, 509.381, -1.19247, 471.456 )
 
-[node name="treeing3" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing3" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( 0.645846, 0, -99.9979, 0, 100, 0, 99.9979, 0, 0.645846, 144.589, -61.1925, 742.779 )
 
-[node name="treeing8" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing8" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( 71.1659, 0, -70.2526, 0, 100, 0, 70.2526, 0, 71.1659, -142.305, -61.1925, 1224.64 )
 
-[node name="treeing9" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing9" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( 71.1659, 0, -70.2526, 0, 150, 0, 70.2526, 0, 71.1659, -204.112, -61.1925, 945.035 )
 
-[node name="treeing4" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing4" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( 172.556, 0, 101.117, 0, 200, 0, -101.117, 0, 172.556, 365.812, -61.1925, 931.354 )
 
-[node name="treeing5" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing5" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( -172.556, 0, -101.117, 0, 200, 0, 101.117, 0, -172.556, -785.068, -271.192, 798.784 )
 
-[node name="treeing6" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing6" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( -172.556, 0, -101.117, 0, 200, 0, 101.117, 0, -172.556, -790.816, -271.192, -91.1974 )
 
-[node name="treeing7" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing7" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( -27.0007, 0, 147.55, 0, 250, 0, -147.55, 0, -27.0007, -412.762, -271.192, -393.646 )
 
-[node name="treeing10" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing10" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( -148.124, 0, 23.6464, 0, 250, 0, -23.6464, 0, -148.124, 251.426, -696.136, -224.305 )
 
-[node name="treeing11" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing11" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( -48.8906, 0, -141.809, 0, 250, 0, 141.809, 0, -48.8906, 88.0582, -696.136, -618.959 )
 
-[node name="treeing2" parent="trees" instance=ExtResource( 30 )]
+[node name="treeing2" parent="trees" instance=ExtResource( 33 )]
 transform = Transform( 0.0645846, 0, -9.99979, 0, 10, 0, 9.99979, 0, 0.0645846, 7.24957, -1.19247, 230.103 )
 
 [node name="coins" type="Spatial" parent="."]
 
-[node name="base_collectible" parent="coins" instance=ExtResource( 31 )]
+[node name="base_collectible" parent="coins" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68256, 0.402141, 0 )
 
-[node name="base_collectible2" parent="coins" instance=ExtResource( 31 )]
+[node name="base_collectible2" parent="coins" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32849, 2.34071, -2.05322 )

@@ -14,6 +14,7 @@ func _on_Area_body_entered(body):
 		body.spring_factor = bounciness
 		body.base_spring = base_spring
 		body.is_bouncing = true
+		body.can_dash = true
 
 
 func _on_Area_body_exited(body):

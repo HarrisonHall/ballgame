@@ -71,6 +71,8 @@ var blink_timer = 0
 
 var coin_count = 0
 
+var pause = false
+
 func _ready():
 	rng.randomize()
 	start_trans = get_global_transform()
@@ -84,7 +86,7 @@ func _ready():
 
 func _process(delta):
 	player_go = camera.player_go
-	if player_go:
+	if player_go and not pause:
 		game_time += delta
 		_process_physics(delta)  # Game movement
 
@@ -106,6 +108,7 @@ func _process_physics(delta):
 		if spawn_trail_timer < 0 and dash_timer > 0:
 			var temp_trans = t.get_global_transform()
 			temp_trans.origin = get_global_transform().origin
+			t.look_vector = get_global_transform().origin + velocity
 			t.set_global_transform(temp_trans)
 			get_tree().get_root().add_child(t)
 			spawn_trail_timer = spawn_trail_timer_reset
@@ -262,7 +265,7 @@ func _process_physics(delta):
 	# Update eyes
 	var rot = momentum
 	rot.y = momentum.y - velocity.y
-	if rot.length() > 1:
+	if rot.length() > .6:
 		eyes_center.rotate(-rot.normalized(), abs(rot.length())*delta)
 		#eyes_center.rotate_x(-rot.x*delta)
 		

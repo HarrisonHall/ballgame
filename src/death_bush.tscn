@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/redberry.dae" type="PackedScene" id=1]
+[ext_resource path="res://death_plane.tscn" type="PackedScene" id=2]
+[ext_resource path="res://bush_spike.tscn" type="PackedScene" id=3]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="berries" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="berry" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.185139, 0.463093, 0.955968 )
+
+[node name="berry14" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.498299, 0.730266, 0.257782 )
+
+[node name="berry15" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.233088, 0.902868, 0.401398 )
+
+[node name="berry2" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.731246, -0.481093, 0.476739 )
+
+[node name="berry9" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.867312, 0.449853, 0.525589 )
+
+[node name="berry10" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.589298, 0.708552, -0.0526073 )
+
+[node name="berry11" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.430549, 0.813357, -0.464796 )
+
+[node name="berry12" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0601313, 0.361087, -0.88867 )
+
+[node name="berry3" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.848064, -0.177678, -0.43203 )
+
+[node name="berry4" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.463784, 0.0761105, -0.848638 )
+
+[node name="berry5" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.119982, -0.448893, -0.814453 )
+
+[node name="berry16" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.367059, -0.736137, -0.578232 )
+
+[node name="berry19" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.367059, -0.877417, -0.185499 )
+
+[node name="berry6" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.871222, -0.162766, -0.237716 )
+
+[node name="berry13" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.62989, 0.536103, -0.514743 )
+
+[node name="berry7" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.776783, 0.199919, 0.485418 )
+
+[node name="berry8" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.443266, -0.211283, 0.900545 )
+
+[node name="berry17" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.443266, -0.714192, 0.523943 )
+
+[node name="berry18" parent="berries" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.151971, -0.714192, 0.682188 )
+
+[node name="death_plane" parent="." instance=ExtResource( 2 )]
+
+[node name="Scene Root" parent="." instance=ExtResource( 3 )]
