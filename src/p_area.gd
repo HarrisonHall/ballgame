@@ -23,10 +23,13 @@ var detach = false
 var detach_pos = Vector3(0,0,0)
 var player_pos = Vector3(0,0,0)
 
+var last_pos = Vector3(0,0,0)
+
 var next_level = "res://debug.tscn"
 var next_level_timer = 3
 
 var area 
+var last_bodies
 
 var pos
 var offset
@@ -34,6 +37,7 @@ var target
 
 var cam_body 
 var player
+var last_delta
 
 var cam_start_nodes = []
 var level 
@@ -45,6 +49,7 @@ var level_start_hud
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	cam_body = get_node("../cam_body")
 	mouse_captured = true
 	cam_start_trans = get_global_transform()
 	pos = get_global_transform().origin
@@ -53,8 +58,10 @@ func _ready():
 	look_at_from_position(pos, target, Vector3(0,1,0))
 	player = get_node("../../../Player")
 	area = get_node("Area")
+	last_bodies = area.get_overlapping_bodies()
 	level_start_hud = get_node("level_start_hud")
 	print("lvs", level_start_hud)
+	
 	
 	level = get_tree().get_root()
 	var children = []
@@ -81,6 +88,7 @@ func _ready():
 
 
 func _process(delta):
+	last_delta = delta
 	if Input.is_action_just_pressed("ui_cancel"):
 		if len(cam_start_nodes) > 0:
 			cam_start_nodes = []
@@ -138,7 +146,9 @@ func _process(delta):
 #			move_set_camera_to_real()
 		offset = (pos - target).normalized() * camera_distance
 		pos = target + offset
-		look_at_from_position(pos, target, Vector3(0,1,0))
+		cam_body.move_and_slide((pos - cam_body.get_global_transform().origin)/delta, Vector3(0,0,0),false, 4, 0.7)
+		look_at_from_position(cam_body.get_global_transform().origin, target, Vector3(0,1,0))
+		#look_at_from_position(pos, target, Vector3(0,1,0))
 	if next_level_timer < 0:
 			call_deferred("_deferred_goto_scene", next_level)
 
@@ -168,11 +178,7 @@ func _input(event):
 			var motion = event.get_relative()
 			var x_change = motion[0]
 			var y_change = motion[1]
-			
-#			var vect_btwn = (get_global_transform().origin - player.get_global_transform().origin).normalized()
-#			var n_vect = vect_btwn
-#			n_vect.y = 0
-#			print(rad2deg(n_vect.dot(vect_btwn)))
+
 			
 			pos += -current_xform.basis[0] * x_change * camera_speed
 			var new_pos = pos
@@ -180,16 +186,13 @@ func _input(event):
 			
 			var vect_btwn = (new_pos - player.get_global_transform().origin).normalized()
 			var n_vect = vect_btwn
+			var old_vect = (pos - player.get_global_transform().origin).normalized()
 			n_vect.y = 0
-			if rad2deg(n_vect.dot(vect_btwn)) > 10:
+			old_vect.y = 0
+			if rad2deg(n_vect.dot(vect_btwn)) > 10 or (old_vect.dot(vect_btwn) < n_vect.dot(vect_btwn)):
 				pos = new_pos
-			#get_parent().rotate(Vector3(0,1,0), x_change)
-#			get_parent().rotate_y(-deg2rad(x_change)*.3)
-#			var cam_xform = get_global_transform()
-#			var x_axis = cam_xform.basis[0].normalized()
-#			x_axis.y = 0
-#			get_parent().rotate(x_axis, deg2rad(y_change)*.3)
 
+	
 	if event is InputEventKey and event.pressed:
 		if event.scancode == KEY_RIGHT:
 			pos += current_xform.basis[0] * 300 * camera_speed
@@ -200,19 +203,17 @@ func _input(event):
 		if event.scancode == KEY_DOWN:
 			pos += -current_xform.basis[1] * 300 * camera_speed
 		if event.scancode == KEY_SHIFT:
-#			var vel = get_parent().get_parent().momentum
-#			if vel.length() > 1:
-#				pos += -(vel.normalized())*camera_distanc
-			print(Performance.get_monitor(0))
+			pass
 				
 	
 	
-	
-	offset = (pos - target).normalized() * camera_distance
+	var real_camera_distance = camera_distance
+	offset = (pos - target).normalized() * real_camera_distance
 	pos = target + offset
 	
-	
-	look_at_from_position(pos, target, Vector3(0,1,0))
+	cam_body.move_and_slide((pos - cam_body.get_global_transform().origin)/last_delta, Vector3(0,0,0), false, 4, 0.7)
+	look_at_from_position(cam_body.get_global_transform().origin, target, Vector3(0,1,0))
+	#look_at_from_position(pos, target, Vector3(0,1,0))
 
 
 

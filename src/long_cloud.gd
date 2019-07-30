@@ -13,5 +13,5 @@ func _process(delta):
 	if pi_counter >= 3.14 * 2:
 		pi_counter = 0
 	#translate(Vector3(0,sin(rad2deg(pi_counter))*0.015,0))
-	print(sin(pi_counter))
+	#print(sin(pi_counter))
 	translate(translate_vector*delta*sin(deg2rad(pi_counter)))
