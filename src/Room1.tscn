@@ -49,7 +49,6 @@ ambient_light_color = Color( 1, 1, 1, 1 )
 [node name="level" type="Spatial" parent="."]
 
 [node name="ground" parent="level" instance=ExtResource( 1 )]
-editor/display_folded = true
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 15, 6.93994, 0.0145895, 0.0351391 )
 
 [node name="ground2" parent="level/ground" instance=ExtResource( 1 )]
@@ -128,7 +127,7 @@ transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.0666667, 2.48188, 5.98541, -2
 transform = Transform( 0.1, 0, 0, 0, 0.5, 0, 0, 0, 0.0666667, -0.693994, -0.0145895, -2.46901 )
 
 [node name="ramp2" parent="level/ground" instance=ExtResource( 3 )]
-transform = Transform( 8.47574e-09, 0, -0.15, 0, 5, 0, 0.09, 0, 1.56958e-07, -0.6, 4.84288e-08, -1.2 )
+transform = Transform( 9.81473e-09, 0, -0.15, 0, 5, 0, 0.13, 0, 1.13247e-08, -0.6, 4.84288e-08, -1.2 )
 
 [node name="cat2" parent="level/ground" instance=ExtResource( 6 )]
 transform = Transform( 0.03, 0, 0, 0, 0.3, 0, 0, 0, 0.02, 0.006006, -0.0145895, -2.46901 )
@@ -299,7 +298,7 @@ transform = Transform( 0.0600712, -0.0319434, 0.0732876, -0.283918, -0.942191, -
 transform = Transform( 0.1, 0, 0, 0, 1, 0, -1.98682e-09, 0, 0.0666667, -2.17776, -0.0145924, -1.9583 )
 
 [node name="Spatial13" parent="level/ground" instance=ExtResource( 22 )]
-transform = Transform( -0.0746284, -1.86265e-08, 0.0665628, -3.50177e-07, 1, -1.39698e-08, -0.0443753, 7.94729e-09, -0.0497523, 2.60192, -0.235682, 2.82318 )
+transform = Transform( -0.0746284, -1.86265e-08, 0.0665628, -3.50177e-07, 1, -1.39698e-08, -0.0443753, 7.94729e-09, -0.0497523, 2.60192, -0.738036, 2.82318 )
 
 [node name="Scene Root2" parent="level/ground" instance=ExtResource( 23 )]
 transform = Transform( 0.0954689, 0.00400525, 0.0294897, -0.0505097, 0.998333, 0.027925, -0.0195525, -0.00277029, 0.0636748, 1.68475, 0.0939658, 2.81771 )
@@ -308,7 +307,7 @@ transform = Transform( 0.0954689, 0.00400525, 0.0294897, -0.0505097, 0.998333, 0
 transform = Transform( -0.00401887, -0.00922904, -0.00836642, -0.0979779, 0.00442041, 0.00467948, -0.00492401, 0.00292745, -0.00815037, 1.67307, 1.29431, 2.70548 )
 
 [node name="mountain_painting" parent="level/ground" instance=ExtResource( 24 )]
-transform = Transform( 0.0677744, 0.00753499, 0.0731428, -0.0141369, 0.995887, -0.0894949, -0.0490108, 0.00335433, 0.0450682, 2.58474, 2.6752, 2.81771 )
+transform = Transform( 0.0677744, 0.00753499, 0.0731428, -0.0141369, 0.995887, -0.0894949, -0.0490108, 0.00335433, 0.0450682, 2.59404, 2.24024, 2.815 )
 
 [node name="Spatial14" parent="level/ground" instance=ExtResource( 25 )]
 transform = Transform( 0.0700369, 0.0106981, 0.0705718, -0.0319253, 0.99241, -0.118758, -0.0475377, 0.00404297, 0.0465647, 2.29941, 0.205887, 2.82524 )
@@ -352,7 +351,6 @@ teleport_to = Vector3( 0, 10, 0 )
 transform = Transform( 0.0945639, -0.0316458, 0.0074978, 0, 0.0230546, 0.0973061, -0.0325219, -0.0920165, 0.0218013, 0, 0.582734, 0 )
 
 [node name="trees" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 0.000645846, 0, 0.0999979, 0, 0.1, 0, -0.0999979, 0, 0.000645846, -22.857, 0.119247, 8.73542 )
 
 [node name="treeing" parent="trees" instance=ExtResource( 33 )]

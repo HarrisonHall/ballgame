@@ -11,7 +11,7 @@ var gravity_time = 0
 var jump_time = 0.01
 var can_jump = false
 var going_up = false
-var movement_speed = 30
+var movement_speed = 25
 var GRAVITY = 20
 var GRAVITY_CONST = 50
 var screen_size
@@ -50,7 +50,7 @@ var dash_timer = 0
 var spawn_trail = false
 var spawn_trail_timer = 0
 var spawn_trail_timer_reset = 0.06
-var dash_constant = 15
+var dash_constant = 10
 
 var trail
 var camera
@@ -120,8 +120,10 @@ func _process_physics(delta):
 	var cam_xform = camera.get_global_transform()
 	var x_axis = cam_xform.basis[0].normalized()
 	x_axis.y = 0
+	x_axis = x_axis.normalized()
 	var z_axis = cam_xform.basis[2].normalized()
 	z_axis.y = 0
+	z_axis = z_axis.normalized()
 
 	# Movement (w/ momentum)
 	if is_on_floor():
@@ -187,9 +189,12 @@ func _process_physics(delta):
 	# Wall collisions
 	if last_collision:
 		if is_on_wall():
+
 			var rv = velocity
 			var vel_at_wall = velocity.dot(last_collision.normal.normalized())
 			velocity -= last_collision.normal.normalized() * vel_at_wall * wall_bounce_factor
+
+
 		if is_on_floor():
 			pass
 #			var rv = velocity
@@ -207,6 +212,10 @@ func _process_physics(delta):
 			if velocity.length() > 0:
 				var x_axis_dash = cam_xform.basis[0].normalized()
 				var z_axis_dash = cam_xform.basis[2].normalized()
+				x_axis_dash.y = 0
+				z_axis_dash.y = 0
+				x_axis_dash = x_axis_dash.normalized()
+				z_axis_dash = z_axis_dash.normalized()
 				var dashed = false
 				if Input.is_action_pressed("ui_right"):
 					velocity = x_axis_dash * dash_constant 
@@ -219,6 +228,12 @@ func _process_physics(delta):
 					dashed = true
 				if Input.is_action_pressed("ui_down"):
 					velocity = z_axis_dash * dash_constant 
+					dashed = true
+				if Input.is_action_pressed("ui_shift_camera"):
+					velocity += Vector3(0,-1,0) * dash_constant 
+					dashed = true
+				if Input.is_action_pressed("ui_jump"):
+					velocity += Vector3(0,1,0) * dash_constant 
 					dashed = true
 				if dashed:
 					dash_timer = dash_timer_reset
@@ -251,7 +266,9 @@ func _process_physics(delta):
 	else:
 		#air_friction = 100
 		#momentum *= air_friction * delta
-		momentum = momentum - momentum*air_friction*delta
+		momentum.y = momentum.y - momentum.y*air_friction*delta
+		momentum.x = momentum.x - momentum.x*air_friction*delta/3
+		momentum.z = momentum.z - momentum.z*air_friction*delta/3
 	
 	# Gravity
 	velocity.y -= GRAVITY * delta
@@ -259,7 +276,7 @@ func _process_physics(delta):
 	
 	
 	var snap = Vector3(0,-1,0) * delta
-	move_and_slide_with_snap(velocity, snap, Vector3(0,1,0))
+	move_and_slide_with_snap(velocity, snap, Vector3(0,1,0), false, 4, 0.85)
 	last_collision = move_and_collide(velocity.normalized()*delta*0.01, true, true, true)
 	
 	# Update eyes
@@ -282,7 +299,7 @@ func _process_physics(delta):
 			z_timer -= delta
 		
 	else:
-		var r = rng.randi_range(0,750)
+		var r = rng.randi_range(0,400)
 		if r == 9 or blink_timer > 0:
 			eyes_center.get_node("eyes").set_texture(blink_eyes)
 			if r == 9:
@@ -314,6 +331,7 @@ func bounce():
 
 func respawn():
 	set_global_transform(start_trans)
+	camera.respawn()
 
 
 func detach_camera_and_die(level):

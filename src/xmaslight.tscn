@@ -9,7 +9,7 @@
 material/0 = ExtResource( 2 )
 
 [node name="OmniLight" type="OmniLight" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86294, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.58041, 0 )
 light_energy = 5.0
 light_indirect_energy = 5.0
 omni_range = 1.66396

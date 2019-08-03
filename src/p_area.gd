@@ -37,7 +37,7 @@ var target
 
 var cam_body 
 var player
-var last_delta
+var last_delta = 0.01
 
 var cam_start_nodes = []
 var level 
@@ -45,6 +45,8 @@ var player_go = true
 var cam_start_trans
 
 var level_start_hud
+
+var camera_spawn
 
 
 func _ready():
@@ -85,6 +87,7 @@ func _ready():
 		trans.origin = follow.get_global_transform().origin
 		set_global_transform(trans)
 		look_at(cam_start_nodes[0][1], Vector3(0,1,0))
+	camera_spawn = get_global_transform().origin
 
 
 func _process(delta):
@@ -268,3 +271,19 @@ func move_body_to_pos(some_pos):
 	var current_pos = cam_body.get_global_transform().origin
 	cam_body.move_and_slide(some_pos - current_pos, Vector3(0,1,0))
 	return cam_body.get_global_transform().origin
+	
+	
+func respawn():
+	if camera_spawn != Vector3(0,0,0):
+		print(camera_spawn)
+		var real_camera_distance = camera_distance
+		target = player.get_global_transform().origin
+		#offset = (target + camera_spawn*target.length()).normalized() * real_camera_distance
+		pos = target + camera_spawn.normalized()*real_camera_distance
+		
+		#cam_body.move_and_slide((pos - cam_body.get_global_transform().origin)/last_delta, Vector3(0,0,0), false, 4, 0.7)
+		#cam_body.translate(pos - cam_body.get_global_transform().origin)
+		var cam_body_trans = cam_body.get_global_transform()
+		cam_body_trans.origin = pos
+		cam_body.set_global_transform(cam_body_trans)
+		look_at_from_position(pos, target, Vector3(0,1,0))

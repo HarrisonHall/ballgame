@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/bigcloud.dae" type="PackedScene" id=1]
+[ext_resource path="res://big_cloud.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.990917, 0.0887652, 1.96411 )
+
+[node name="Scene Root" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="shape" parent="cloud2" index="0"]
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="." index="3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( 0.676882, 0, -0.736092, 0, 1, 0, 0.736092, 0, 0.676882, -0.374502, 0.927434, 0.397871 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody" index="1"]
+transform = Transform( 0.676882, 0, -0.736092, 0, 1, 0, 0.736092, 0, 0.676882, 1.45623, 0.927434, -2.42206 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody" index="2"]
+transform = Transform( 0.81512, 0, 0.579293, 0, 1, 0, -0.579293, 0, 0.81512, 1.64053, 0.927433, -0.0394311 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody" index="3"]
+transform = Transform( 0.999903, 0, -0.0139077, 0, 1, 0, 0.0139077, 0, 0.999903, 2.09896, 0.927434, -0.74808 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="StaticBody" index="4"]
+transform = Transform( 0.767334, 0, -0.641247, 0, 1, 0, 0.641247, 0, 0.767334, 0.303148, 0.927435, -0.691955 )
+shape = SubResource( 1 )

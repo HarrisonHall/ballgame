@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://basic water.tscn" type="PackedScene" id=1]
 [ext_resource path="res://death_plane.tscn" type="PackedScene" id=2]
@@ -17,15 +17,16 @@
 [ext_resource path="res://base_collectible.tscn" type="PackedScene" id=15]
 [ext_resource path="res://death_bush.tscn" type="PackedScene" id=16]
 [ext_resource path="res://long_cloud.tscn" type="PackedScene" id=17]
-[ext_resource path="res://fence1.tscn" type="PackedScene" id=18]
-[ext_resource path="res://no_shrubbery.tscn" type="PackedScene" id=19]
-[ext_resource path="res://night_star.tscn" type="PackedScene" id=20]
-[ext_resource path="res://generic_rock.tscn" type="PackedScene" id=21]
-[ext_resource path="res://moon.tscn" type="PackedScene" id=22]
-[ext_resource path="res://PathFollow.gd" type="Script" id=23]
-[ext_resource path="res://rabbit.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=25]
-[ext_resource path="res://objects/bunny.dae" type="PackedScene" id=26]
+[ext_resource path="res://big_cloud.tscn" type="PackedScene" id=18]
+[ext_resource path="res://fence1.tscn" type="PackedScene" id=19]
+[ext_resource path="res://no_shrubbery.tscn" type="PackedScene" id=20]
+[ext_resource path="res://night_star.tscn" type="PackedScene" id=21]
+[ext_resource path="res://generic_rock.tscn" type="PackedScene" id=22]
+[ext_resource path="res://moon.tscn" type="PackedScene" id=23]
+[ext_resource path="res://PathFollow.gd" type="Script" id=24]
+[ext_resource path="res://rabbit.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=26]
+[ext_resource path="res://objects/bunny.dae" type="PackedScene" id=27]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_horizon_color = Color( 0.611765, 0.568627, 0.392157, 1 )
@@ -83,11 +84,11 @@ environment = SubResource( 2 )
 transform = Transform( 200, 0, 0, 0, 1, 0, 0, 0, 200, 30.42, 17.4131, 46.0802 )
 
 [node name="Mountain" parent="level" instance=ExtResource( 3 )]
-editor/display_folded = true
 transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 5.75245, -1.7041, 50.19 )
 
 [node name="darkness" parent="level/Mountain" instance=ExtResource( 4 )]
 transform = Transform( 0.03, 0.05, 0, 0, 0.1, 0, 1.77636e-15, 1.77636e-15, 0.08, 0.068633, 1.6182, -0.182 )
+new_scene = "res://mountain_cave_1.tscn"
 
 [node name="darkness2" parent="level/Mountain" instance=ExtResource( 4 )]
 transform = Transform( 0.03, 0, 0, 0, 0.1, 0, 1.02141e-14, 0, 0.08, 0.113107, 1.66711, -0.171436 )
@@ -136,7 +137,6 @@ transform = Transform( -0.315961, 0.945139, 0.0829454, 0.934214, 0.294666, 0.201
 loop = false
 
 [node name="trees" type="Spatial" parent="level"]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.9034, 95.9608, -2.9931 )
 
 [node name="evergreen" parent="level/trees" instance=ExtResource( 7 )]
@@ -198,10 +198,10 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -22.2918, -53.4673, 133.323 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2023, -58.729, 138.756 )
 
 [node name="evergreen3" parent="level/trees" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1902, -44.1261, -11.9493 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1902, -44.4507, -11.9493 )
 
 [node name="evergreen9" parent="level/trees" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -83.1902, -54.1261, 21.0507 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -83.1902, -54.5115, 21.0507 )
 
 [node name="evergreen10" parent="level/trees" instance=ExtResource( 7 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -71.1902, -1.1261, 5.05066 )
@@ -234,7 +234,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -87.1902, -4.49368, 40.0507 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -79.6537, -0.784058, 69.889 )
 
 [node name="evergreen14" parent="level/trees" instance=ExtResource( 7 )]
-editor/display_folded = true
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, -39.972, -40.0606, 94.5047 )
 
 [node name="star" parent="level/trees/evergreen14" instance=ExtResource( 10 )]
@@ -319,7 +318,7 @@ transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -1.42787, 2.37494, 1.
 transform = Transform( 0.05, 0, -8.88178e-16, 0, 0.05, 0, 8.88178e-16, 0, 0.05, -1.17918, 1.70264, 1.67589 )
 
 [node name="Scene Root9" parent="level/trees/evergreen14" instance=ExtResource( 9 )]
-transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.0120182, 2.98824, 1.47589 )
+transform = Transform( 0.05, 0, -8.88178e-16, 0, 0.05, 0, 8.88178e-16, 0, 0.05, 0.0120182, 2.98824, 1.47589 )
 
 [node name="Scene Root10" parent="level/trees/evergreen14" instance=ExtResource( 9 )]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.589325, 3.62918, 0.929549 )
@@ -331,7 +330,7 @@ transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.855122, 4.36321, -
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.0261242, 4.36321, -0.990767 )
 
 [node name="Scene Root11" parent="level/trees/evergreen14" instance=ExtResource( 9 )]
-transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -1.05597, 3.62918, 0.434209 )
+transform = Transform( 0.05, 0, -8.88178e-16, 0, 0.05, 0, 8.88178e-16, 0, 0.05, -1.05597, 3.62918, 0.434209 )
 
 [node name="Scene Root14" parent="level/trees/evergreen14" instance=ExtResource( 9 )]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.675416, 4.46987, 0.544834 )
@@ -394,10 +393,11 @@ transform = Transform( 2, 0, 0, 0, 5, 0, 0, 0, 2, 28.4058, -52.611, -20.4727 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38876, -25.9774, -27.3958 )
 
 [node name="checkpoint" parent="level" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.9034, 95.9608, -2.9931 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.1478, 95.9608, -2.31129 )
 
 [node name="checkpoint3" parent="level" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.387973, 151.447, 44.0803 )
+camera_direction = Vector3( -1, 1, 0 )
 
 [node name="checkpoint2" parent="level" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.869, 47.5878, -23.0254 )
@@ -428,7 +428,7 @@ bounciness = 10
 base_spring = 70
 
 [node name="spring5" parent="level/springs" instance=ExtResource( 13 )]
-transform = Transform( 0.999918, 0.0128144, 0, -0.0128144, 0.999918, 0, 0, 0, 1, 43.8039, 97.557, -25.9711 )
+transform = Transform( 0.999918, 0.0128144, 0, -0.0128144, 0.999918, 0, 0, 0, 1, 44.931, 97.557, -26.827 )
 bounciness = 15
 base_spring = 100
 
@@ -445,7 +445,6 @@ transform = Transform( 0.999918, 0.0128144, 0, -0.00923279, 0.720443, -0.693452,
 bounciness = 5
 
 [node name="igloos" type="Spatial" parent="level"]
-editor/display_folded = true
 
 [node name="Scene Root" parent="level/igloos" instance=ExtResource( 14 )]
 transform = Transform( 1.82872, 0, 0.809794, 0, 2, 0, -0.809794, 0, 1.82872, -22.4178, 57.9414, 90 )
@@ -466,7 +465,7 @@ transform = Transform( 4.4576, 0, -0.616319, 0, 4.5, 0, 0.616319, 0, 4.4576, 54.
 transform = Transform( -0.024478, 0, -4.49994, 0, 4.5, 0, 4.49994, 0, -0.024478, 78.8367, 57.8525, 99.8291 )
 
 [node name="igloo6" parent="level/igloos" instance=ExtResource( 14 )]
-transform = Transform( -3.99078, -1.76936, -1.09227, -1.7066, 4.13756, -0.467093, 1.18795, -2.32023e-07, -4.34037, -22.4224, 92.217, 30.3839 )
+transform = Transform( -3.99078, -1.76936, -1.09227, -1.7066, 4.13756, -0.467093, 1.18795, -2.32023e-07, -4.34037, -22.4224, 92.0203, 30.3839 )
 
 [node name="igloo2" parent="level/igloos" instance=ExtResource( 14 )]
 transform = Transform( 9.99768, 0, -0.215295, 0, 10, 0, 0.215295, 0, 9.99768, 47.5246, 57.1143, 81.0284 )
@@ -655,834 +654,881 @@ editor/display_folded = true
 [node name="Scene Root" parent="level/clouds" instance=ExtResource( 17 )]
 transform = Transform( 3, 0, 0, 0, 1.3, 0, 0, 0, 3, 20.9755, 128.104, 66.9586 )
 
+[node name="Scene Root3" parent="level/clouds" instance=ExtResource( 17 )]
+transform = Transform( 0.520944, 0, 2.95442, 0, 1.3, 0, -2.95442, 0, 0.520944, -17.7533, 126.104, 38.9586 )
+translate_vector = Vector3( 0, 0.06, 0 )
+
+[node name="Scene Root4" parent="level/clouds" instance=ExtResource( 17 )]
+transform = Transform( 1.72073, 0, 2.45746, 0, 1.3, 0, -2.45746, 0, 1.72073, -14.7533, 151.104, 20.9586 )
+translate_vector = Vector3( 0, -0.06, 0 )
+
+[node name="Scene Root2" parent="level/clouds" instance=ExtResource( 18 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -1.71661e-05, 135, 65 )
+translate_vector = Vector3( 0, 0.03, 0 )
+pi_counter = 180
+
 [node name="fences" type="Spatial" parent="level"]
 editor/display_folded = true
 
-[node name="fence" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102384, 0, 0.999948, 0, 1, 0, -0.999948, 0, 0.0102384, 63.8874, 69.6308, -30.1738 )
 
-[node name="fence18" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence18" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -0.999971, 0, 0.00770753, 0, 1, 0, -0.00770753, 0, -0.999971, 66.1881, 69.6308, -27.8253 )
 
-[node name="fence2" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence2" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.00636113, -0.783577, 0.621262, 0.00802249, 0.621295, 0.783536, -0.999948, -1.02754e-07, 0.0102384, 46.3412, 66.3825, -31.001 )
 
-[node name="fence3" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence3" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.00636113, -0.783577, 0.621262, 0.00802249, 0.621295, 0.783536, -0.999948, -1.02754e-07, 0.0102384, 44.4066, 63.9177, -31.001 )
 
-[node name="fence4" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence4" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.00806595, -0.61592, 0.787767, 0.00630597, 0.787809, 0.615888, -0.999948, -8.07681e-08, 0.0102384, 35.5603, 55.6032, -31.001 )
 
-[node name="fence5" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence5" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.00996727, -0.228621, 0.973465, 0.00234068, 0.973516, 0.228608, -0.999948, -2.99799e-08, 0.0102384, 24.9622, 50.8192, -31.001 )
 
-[node name="fence6" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence6" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102326, -0.0337026, 0.99938, 0.000345049, 0.999432, 0.0336998, -0.999948, -4.41947e-09, 0.0102384, -6.33952, 47.6516, -31.001 )
 
-[node name="fence7" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence7" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102326, -0.0337026, 0.99938, 0.000345049, 0.999432, 0.0336998, -0.999948, -4.41947e-09, 0.0102384, -13.4227, 47.6516, -31.001 )
 
-[node name="fence8" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence8" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102326, -0.0337026, 0.99938, 0.000345049, 0.999432, 0.0336998, -0.999948, -4.41947e-09, 0.0102384, -32.3482, 33.2357, -39.6954 )
 
-[node name="fence9" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence9" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102326, -0.0337026, 0.99938, 0.000345049, 0.999432, 0.0336998, -0.999948, -4.41947e-09, 0.0102384, -29.1955, 33.2357, -39.6954 )
 
-[node name="fence10" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence10" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102326, -0.0337026, 0.99938, 0.000345049, 0.999432, 0.0336998, -0.999948, -4.41947e-09, 0.0102384, -76.9076, 35.9889, -30.9563 )
 
-[node name="fence30" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence30" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102326, -0.0337026, 0.99938, 0.000345049, 0.999432, 0.0336998, -0.999948, -4.41947e-09, 0.0102384, -85.8368, 32.7133, -39.6837 )
 
-[node name="fence31" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence31" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -0.999948, -2.94628e-09, 0.0102384, 0.000345049, 0.999432, 0.0336998, -0.0102326, 0.0337026, -0.99938, -86.7125, 32.5229, -37.4574 )
 
-[node name="fence14" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence14" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102326, -0.0337026, 0.99938, 0.000345049, 0.999432, 0.0336998, -0.999948, -4.41947e-09, 0.0102384, -76.9919, 35.8287, -24.6837 )
 
-[node name="fence15" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence15" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102326, -0.0337026, 0.99938, 0.000345049, 0.999432, 0.0336998, -0.999948, -4.41947e-09, 0.0102384, -73.8433, 35.8287, -24.6837 )
 
-[node name="fence12" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence12" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -0.999948, -2.94628e-09, 0.0102384, 0.000345049, 0.999432, 0.0336998, -0.0102326, 0.0337026, -0.99938, -77.8542, 35.9733, -28.6919 )
 
-[node name="fence13" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence13" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -0.999948, -2.94628e-09, 0.0102384, 0.000345049, 0.999432, 0.0336998, -0.0102326, 0.0337026, -0.99938, -77.8542, 35.8498, -25.5662 )
 
-[node name="fence16" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence16" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -0.999948, -2.94628e-09, 0.0102384, 0.000345049, 0.999432, 0.0336998, -0.0102326, 0.0337026, -0.99938, -71.5448, 35.8498, -25.5662 )
 
-[node name="Spatial" parent="level/fences/fence16" instance=ExtResource( 19 )]
+[node name="Spatial" parent="level/fences/fence16" instance=ExtResource( 20 )]
 transform = Transform( 0.0331168, -0.0184384, 0.498561, -0.157085, 0.47386, 0.0279592, -0.473527, -0.158485, 0.0255926, -0.255753, 1.65329, 2.36191 )
 
-[node name="Spatial3" parent="level/fences/fence16" instance=ExtResource( 19 )]
+[node name="Spatial3" parent="level/fences/fence16" instance=ExtResource( 20 )]
 transform = Transform( 0.0331168, -0.0184384, 0.498562, -0.157085, 0.473861, 0.0279592, -0.473528, -0.158485, 0.0255926, 6.53963, 1.58607, 4.28592 )
 
-[node name="Spatial4" parent="level/fences/fence16" instance=ExtResource( 19 )]
+[node name="Spatial4" parent="level/fences/fence16" instance=ExtResource( 20 )]
 transform = Transform( 0.0335328, -0.0142811, 0.498671, 0.247928, 0.434183, -0.00423747, -0.432906, 0.247553, 0.0362, 6.51201, 1.71714, 0.398983 )
 
-[node name="Spatial2" parent="level/fences/fence16" instance=ExtResource( 19 )]
+[node name="Spatial2" parent="level/fences/fence16" instance=ExtResource( 20 )]
 transform = Transform( -0.453397, 0.207619, 0.0364165, 0.209142, 0.453867, 0.0162911, -0.0262915, 0.0300055, -0.498407, 2.36601, 1.53976, 5.70235 )
 
-[node name="Spatial5" parent="level/fences/fence16" instance=ExtResource( 19 )]
+[node name="Spatial5" parent="level/fences/fence16" instance=ExtResource( 20 )]
 transform = Transform( -0.453397, 0.207619, 0.0364165, 0.209143, 0.453868, 0.0162911, -0.0262915, 0.0300055, -0.498407, 2.2963, 1.76937, -1.10624 )
 
-[node name="Spatial6" parent="level/fences/fence16" instance=ExtResource( 19 )]
+[node name="Spatial6" parent="level/fences/fence16" instance=ExtResource( 20 )]
 transform = Transform( -0.453397, 0.207619, 0.0364165, 0.209143, 0.453868, 0.0162911, -0.0262915, 0.0300055, -0.498407, 3.04646, 1.76938, -1.11392 )
 
-[node name="fence17" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence17" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -0.999948, -2.94628e-09, 0.0102384, 0.000345049, 0.999432, 0.0336998, -0.0102326, 0.0337026, -0.99938, -71.5448, 35.8498, -28.6849 )
 
-[node name="fence11" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence11" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 0.0102326, -0.0337026, 0.99938, 0.000345049, 0.999432, 0.0336998, -0.999948, -4.41947e-09, 0.0102384, -73.7436, 35.8284, -30.9563 )
 
-[node name="fence50" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence50" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.71661e-05, 53.1902, 121.501 )
 
-[node name="fence68" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence68" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.14441e-05, 91.7247, 77.0746 )
 
-[node name="fence69" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence69" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.4895, 91.7247, 77.0746 )
 
-[node name="fence70" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence70" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.7413, 91.7247, 77.0746 )
 
-[node name="fence71" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence71" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -23.2168, 89.1982, 11.639 )
 
-[node name="fence72" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence72" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.5896, 91.7247, 77.0746 )
 
-[node name="fence52" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence52" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18, 53.1902, 121.501 )
 
-[node name="fence53" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence53" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1358, 53.1902, 121.501 )
 
-[node name="fence54" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence54" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 91.3354, 32.4171, 140.631 )
 
-[node name="fence55" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence55" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 93.661, 32.3617, 138.29 )
 
-[node name="fence56" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence56" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, 68.2142 )
 
-[node name="fence57" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence57" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, 65.0792 )
 
-[node name="fence58" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence58" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, 61.9094 )
 
-[node name="fence59" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence59" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, 32.878 )
 
-[node name="fence60" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence60" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, 29.7476 )
 
-[node name="fence61" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence61" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, 20.2623 )
 
-[node name="fence62" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence62" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, 17.1138 )
 
-[node name="fence63" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence63" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, 11.6023 )
 
-[node name="fence64" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence64" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, -3.00138 )
 
-[node name="fence65" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence73" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 66.6185, 90.9999, -0.00138092 )
+
+[node name="fence81" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.5929, 95.4324, -3.67093 )
+
+[node name="fence74" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 66.6185, 90.9999, 16.9986 )
+
+[node name="fence75" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 66.6185, 90.9999, 20.1294 )
+
+[node name="fence76" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 66.6184, 90.9999, 23.3014 )
+
+[node name="fence77" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 66.6184, 90.9999, 26.4595 )
+
+[node name="fence78" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 66.6184, 90.9999, 50.9375 )
+
+[node name="fence79" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 66.6184, 90.9999, 74.9355 )
+
+[node name="fence80" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 64.2924, 90.9999, 77.2737 )
+
+[node name="fence65" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, -10.0652 )
 
-[node name="fence66" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence66" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 84.6185, 46.9999, -29.6069 )
 
-[node name="fence67" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence67" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 83.7941, 46.9999, -30.4477 )
 
-[node name="fence51" parent="level/fences" instance=ExtResource( 18 )]
+[node name="fence51" parent="level/fences" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -21, 53.1902, 121.501 )
+
+[node name="fence82" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.6834, 33.2153, 140.397 )
+
+[node name="fence83" parent="level/fences" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -71.8214, 33.2153, 140.397 )
 
 [node name="stars" type="Spatial" parent="level"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 97.1752, 0 )
 
-[node name="star" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.9124, 376.505, -231.831 )
 
-[node name="star85" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star85" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -168.942, 376.505, 1.82106 )
 
-[node name="star242" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star242" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -312.375, 376.505, 220.592 )
 
-[node name="star38" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star38" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -109.836, 376.505, 166.94 )
 
-[node name="star243" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star243" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -14.2203, 376.505, 172.694 )
 
-[node name="star80" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star80" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 156.445, 376.505, 270.709 )
 
-[node name="star142" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star142" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 61.7147, 376.505, 12.4035 )
 
-[node name="star143" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star143" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -115.938, 376.505, -43.9273 )
 
-[node name="star63" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star63" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -168.506, 376.505, 29.3382 )
 
-[node name="star209" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star209" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -302.673, 376.505, 254.502 )
 
-[node name="star39" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star39" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -82.3162, 376.505, 167.123 )
 
-[node name="star210" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star210" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -2.34126, 376.505, 369.675 )
 
-[node name="star122" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star122" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 57.2279, 376.505, 80.5649 )
 
-[node name="star211" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star211" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 41.985, 376.505, -6.78297 )
 
-[node name="star3" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star3" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.88835, 357.963, -240.791 )
 
-[node name="star240" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star240" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -247.645, 357.963, -199.595 )
 
-[node name="star81" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star81" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -357.142, 357.963, 30.2311 )
 
-[node name="star241" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star241" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -192.307, 357.963, 158.219 )
 
-[node name="star40" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star40" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -82.7754, 357.963, 444.059 )
 
-[node name="star112" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star112" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 113.607, 357.963, 80.0453 )
 
-[node name="star220" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star220" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 81.2921, 357.963, -47.203 )
 
-[node name="star4" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star4" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.7587, 357.963, -114.153 )
 
-[node name="star152" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star152" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -103.016, 357.963, -137.088 )
 
-[node name="star153" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star153" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -246.622, 357.963, 106.095 )
 
-[node name="star41" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star41" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -157.967, 357.963, 223.004 )
 
-[node name="star154" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star154" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -8.26187, 357.963, 246.344 )
 
-[node name="star120" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star120" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 114.301, 357.963, 155.321 )
 
-[node name="star164" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star164" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 268.067, 357.963, -52.3443 )
 
-[node name="star5" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star5" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7659, 357.963, -153.312 )
 
-[node name="star165" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star165" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -143.499, 357.963, -151.862 )
 
-[node name="star118" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star118" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -264.941, 357.963, -26.4279 )
 
-[node name="star247" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star247" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -260.754, 357.963, 146.807 )
 
-[node name="star54" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star54" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -140.234, 357.963, 262.281 )
 
-[node name="star248" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star248" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -53.3444, 357.963, 409.694 )
 
-[node name="star100" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star100" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 153.292, 357.963, 136.968 )
 
-[node name="star182" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star182" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 149.661, 357.963, -35.3379 )
 
-[node name="star6" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star6" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7659, 342.174, -181.164 )
 
-[node name="star183" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star183" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -163.287, 342.174, -171.464 )
 
-[node name="star78" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star78" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -292.791, 342.174, -25.9867 )
 
-[node name="star184" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star184" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -280.039, 342.174, 166.903 )
 
-[node name="star55" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star55" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -140.418, 342.174, 290.133 )
 
-[node name="star134" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star134" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 51.7799, 342.174, 281.118 )
 
-[node name="star101" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star101" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 181.143, 342.174, 136.712 )
 
-[node name="star135" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star135" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 169.079, 342.174, -55.3057 )
 
-[node name="star7" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star7" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 82.681, 342.174, -77.2297 )
 
-[node name="star155" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star155" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -52.2078, 342.174, -135.914 )
 
-[node name="star94" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star94" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -189.707, 342.174, -80.5414 )
 
-[node name="star156" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star156" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -246.253, 342.174, 55.2741 )
 
-[node name="star56" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star56" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -192.644, 342.174, 185.85 )
 
-[node name="star185" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star185" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -59.0616, 342.174, 244.833 )
 
-[node name="star95" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star95" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 77.7007, 342.174, 190.582 )
 
-[node name="star186" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star186" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 134.555, 342.174, 56.0966 )
 
-[node name="star8" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star8" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 208.921, 342.174, -100.632 )
 
-[node name="star187" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star187" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, 3.59893, 342.174, -80.6334 )
 
-[node name="star71" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star71" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -111.166, 342.174, -229.266 )
 
-[node name="star188" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star188" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -191.863, 342.174, -1.40116 )
 
-[node name="star46" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star46" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -370.019, 342.174, 153.058 )
 
-[node name="star189" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star189" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -114.501, 342.174, 189.185 )
 
-[node name="star86" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star86" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, -0.847135, 342.174, 191.306 )
 
-[node name="star160" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star160" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 79.7913, 342.174, 112.41 )
 
-[node name="star9" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star9" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9328, 342.174, -222.295 )
 
-[node name="star226" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star226" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -59.8011, 342.174, 185.479 )
 
-[node name="star89" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star89" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 34.751, 342.174, 149.61 )
 
-[node name="star232" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star232" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 75.2201, 342.174, 57.7761 )
 
-[node name="star10" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star10" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -135.258, 342.174, -34.6594 )
 
-[node name="star233" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star233" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -175.338, 342.174, 48.88 )
 
-[node name="star77" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star77" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -143.69, 342.174, 136.696 )
 
-[node name="star234" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star234" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -59.5322, 342.174, 175.462 )
 
-[node name="star125" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star125" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 65.2891, 342.174, 60.8589 )
 
-[node name="star123" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star123" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 33.1235, 342.174, -26.9548 )
 
-[node name="star126" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star126" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, -51.3659, 342.174, -65.3246 )
 
-[node name="star15" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star15" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -194.186, 342.174, 31.5035 )
 
-[node name="star107" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star107" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -76.6023, 342.174, 194.569 )
 
-[node name="star177" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star177" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, 28.7965, 342.174, 168.527 )
 
-[node name="star49" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star49" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, 84.9367, 342.174, 78.9528 )
 
-[node name="star178" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star178" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 117.209, 342.174, -176.389 )
 
-[node name="star16" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star16" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -286.375, 342.174, -105.007 )
 
-[node name="star231" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star231" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -134.108, 342.174, 45.5495 )
 
-[node name="star114" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star114" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -371.473, 342.174, 104.892 )
 
-[node name="star162" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star162" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -228.545, 342.174, 330.568 )
 
-[node name="star57" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star57" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -5.6302, 342.174, 117.569 )
 
-[node name="star163" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star163" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 24.0386, 342.174, 63.9164 )
 
-[node name="star69" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star69" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 6.46634, 342.174, 4.67342 )
 
-[node name="star170" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star170" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, -262.552, 342.174, 251.62 )
 
-[node name="star17" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star17" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -224.227, 342.174, 73.5227 )
 
-[node name="star171" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star171" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -161.091, 342.174, 188.221 )
 
-[node name="star97" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star97" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -34.1125, 342.174, 223.941 )
 
-[node name="star172" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star172" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, 79.566, 342.174, 159.01 )
 
-[node name="star58" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star58" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, 115.256, 342.174, 37.1335 )
 
-[node name="star238" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star238" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 51.966, 342.174, -78.5737 )
 
-[node name="star70" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star70" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, -75.8741, 342.174, -114.923 )
 
-[node name="star239" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star239" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, -190.57, 342.174, -49.7947 )
 
-[node name="star18" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star18" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -171.242, 342.174, 137.758 )
 
-[node name="star216" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star216" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -202.852, 342.174, 292.328 )
 
-[node name="star108" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star108" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, 29.2752, 342.174, 169.945 )
 
-[node name="star217" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star217" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, 271.28, 342.174, 53.7885 )
 
-[node name="star59" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star59" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, 62.6972, 342.174, -27.451 )
 
-[node name="star191" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star191" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -92.3914, 342.174, 113.608 )
 
-[node name="star109" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star109" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -39.4183, 342.174, 122.656 )
 
-[node name="star244" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star244" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, 3.87398, 342.174, 91.5007 )
 
-[node name="star34" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star34" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, 13.877, 342.174, 40.1631 )
 
-[node name="star245" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star245" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -17.2266, 342.174, -4.4169 )
 
-[node name="star65" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star65" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, 182.267, 342.174, 220.631 )
 
-[node name="star222" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star222" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, 32.4424, 342.174, 61.7315 )
 
-[node name="star35" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star35" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, 14.1502, 342.174, -1.09562 )
 
-[node name="star147" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star147" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -46.3466, 342.174, -33.6467 )
 
-[node name="star87" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star87" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, -312.172, 342.174, -178.457 )
 
-[node name="star148" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star148" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, -144.092, 342.174, 47.7939 )
 
-[node name="star14" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star14" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2946, 416.332, 17.4066 )
 
-[node name="star149" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star149" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -231.629, 416.332, -151.67 )
 
-[node name="star93" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star93" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -93.5783, 416.332, 12.9234 )
 
-[node name="star140" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star140" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -112.2, 416.332, 52.755 )
 
-[node name="star36" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star36" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -97.044, 416.332, 91.845 )
 
-[node name="star141" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star141" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -58.5694, 416.332, 110.758 )
 
-[node name="star119" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star119" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, -17.8069, 416.332, 96.4832 )
 
-[node name="star29" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star29" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2946, 381.299, 55.0869 )
 
-[node name="star99" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star99" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -55.9027, 381.299, 12.3266 )
 
-[node name="star144" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star144" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -86.1103, 381.299, 25.5683 )
 
-[node name="star60" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star60" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -96.7945, 381.299, 54.1654 )
 
-[node name="star145" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star145" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -85.1633, 381.299, 84.0639 )
 
-[node name="star82" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star82" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, -55.4857, 381.299, 96.8305 )
 
-[node name="star146" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star146" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, -25.7809, 381.299, 84.7414 )
 
-[node name="star30" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star30" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4219, 381.299, 55.0869 )
 
-[node name="star132" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star132" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, 0.0932684, 381.299, -0.695492 )
 
-[node name="star124" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star124" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -56.4684, 381.299, -23.3854 )
 
-[node name="star133" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star133" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -111.88, 381.299, 0.837969 )
 
-[node name="star61" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star61" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -132.51, 381.299, 53.929 )
 
-[node name="star173" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star173" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -110.466, 381.299, 109.272 )
 
-[node name="star96" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star96" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, -55.1565, 381.299, 132.545 )
 
-[node name="star174" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star174" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, -0.175522, 381.299, 109.642 )
 
-[node name="star31" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star31" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76.2711, 362.806, 55.087 )
 
-[node name="star175" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star175" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, 37.2857, 362.806, -38.2422 )
 
-[node name="star104" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star104" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -174.058, 338.145, -237.257 )
 
-[node name="star204" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star204" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -150.011, 362.806, -35.7551 )
 
-[node name="star62" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star62" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -322.579, 362.806, 53.579 )
 
-[node name="star205" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star205" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, -147.906, 362.806, 146.571 )
 
-[node name="star201" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star201" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 37.7124, 362.806, 146.487 )
 
-[node name="star11" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star11" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.456, 342.174, -126.155 )
 
-[node name="star202" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star202" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -270.038, 342.174, 14.4703 )
 
-[node name="star72" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star72" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -234.506, 342.174, 180.338 )
 
-[node name="star37" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star37" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, 67.1636, 342.174, 236.497 )
 
-[node name="star212" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star212" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 159.759, 342.174, 95.895 )
 
-[node name="star121" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star121" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 124.226, 342.174, -69.9949 )
 
-[node name="star213" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star213" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, -17.8305, 342.174, -160.338 )
 
-[node name="star21" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star21" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.456, 191.779, -390.396 )
 
-[node name="star227" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star227" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -457.768, 191.779, -171.488 )
 
-[node name="star64" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star64" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -498.714, 191.779, 184.523 )
 
-[node name="star228" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star228" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -443.78, 191.779, 461.347 )
 
-[node name="star50" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star50" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, 65.4138, 191.779, 500.732 )
 
-[node name="star229" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star229" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 346.254, 191.779, 283.093 )
 
-[node name="star249" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star249" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 198.66, 259.773, 274.58 )
 
-[node name="star90" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star90" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 388.456, 191.779, -72.4304 )
 
-[node name="star166" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star166" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 166.39, 191.779, -349.774 )
 
-[node name="star22" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star22" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.1933, 191.779, -325.319 )
 
-[node name="star167" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star167" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -350.827, 191.779, -186.977 )
 
-[node name="star74" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star74" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -435.012, 191.779, 97.2405 )
 
-[node name="star192" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star192" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -384.798, 191.779, 354.665 )
 
-[node name="star193" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star193" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 239.213, 191.779, 297.873 )
 
-[node name="star84" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star84" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 324.177, 191.779, 14.4288 )
 
-[node name="star194" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star194" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 182.863, 191.779, -242.98 )
 
-[node name="star23" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star23" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9308, 149.327, -325.319 )
 
-[node name="star138" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star138" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -297.157, 149.327, -241.158 )
 
-[node name="star67" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star67" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -436.22, 149.327, 20.9875 )
 
-[node name="star139" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star139" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -347.604, 149.327, 301.86 )
 
-[node name="star33" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star33" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -96.6774, 100.347, 761.424 )
 
-[node name="star198" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star198" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 185.186, 149.327, 351.697 )
 
-[node name="star105" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star105" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 324.88, 149.327, 90.6882 )
 
-[node name="star199" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star199" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 237.537, 149.327, -189.813 )
 
-[node name="star26" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star26" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0692, 182.178, -325.319 )
 
-[node name="star88" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star88" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -436.901, 182.178, -22.0071 )
 
-[node name="star223" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star223" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -378.629, 182.178, 272.086 )
 
-[node name="star83" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star83" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 325.277, 182.178, 133.686 )
 
-[node name="star195" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star195" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 268.364, 182.178, -159.835 )
 
-[node name="star27" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star27" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 109.069, 193.327, -325.319 )
 
-[node name="star196" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star196" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -209.893, 193.327, -329.253 )
 
-[node name="star197" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star197" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -437.071, 193.327, 216.002 )
 
-[node name="star236" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star236" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 97.3397, 193.327, 439.213 )
 
-[node name="star106" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star106" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 326.023, 193.327, 214.683 )
 
-[node name="star28" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star28" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.0692, 317.327, -325.319 )
 
-[node name="star179" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star179" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -241.561, 317.327, -297.283 )
 
-[node name="star79" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star79" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -437.471, 317.327, -58.0025 )
 
-[node name="star181" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star181" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 129.219, 317.327, 407.453 )
 
-[node name="star110" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star110" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 325.608, 317.327, 169.685 )
 
-[node name="star214" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star214" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 294.172, 317.327, -134.736 )
 
-[node name="star215" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star215" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -403.423, 207.021, -133.879 )
 
-[node name="star102" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star102" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -433.828, 207.021, 171.969 )
 
-[node name="star206" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star206" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, 0.678123, 207.021, 406.413 )
 
-[node name="star207" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star207" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 292.16, 207.021, 245.125 )
 
-[node name="star92" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star92" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 323.488, 207.021, -60.3054 )
 
-[node name="star208" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star208" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 129.283, 207.021, -295.085 )
 
-[node name="star24" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star24" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 113.936, 147.763, -325.319 )
 
-[node name="star168" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star168" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -206.468, 147.763, -332.711 )
 
-[node name="star169" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star169" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -440.582, 147.763, 212.632 )
 
-[node name="star43" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star43" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, -225.541, 114.204, 433.728 )
 
-[node name="star127" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star127" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 93.8918, 147.763, 442.648 )
 
-[node name="star128" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star128" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, 329.922, 147.763, -99.9707 )
 
-[node name="star13" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star13" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.101, 342.174, -51.1673 )
 
-[node name="star111" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star111" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, 59.5269, 342.174, 348.44 )
 
-[node name="star44" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star44" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, 1.3061, 342.174, 161.072 )
 
-[node name="star131" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star131" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 59.8263, 342.174, 89.6031 )
 
-[node name="star68" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star68" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 49.8533, 342.174, -2.95102 )
 
-[node name="star157" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star157" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, -22.5389, 342.174, -60.3177 )
 
-[node name="star12" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star12" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -178.073, 342.174, -23.6408 )
 
-[node name="star158" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star158" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.703747, 0, 0.710451, 0, 1, 0, -0.710451, 0, 0.703747, -197.641, 342.174, 87.0527 )
 
-[node name="star103" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star103" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.0158385, 0, 0.999875, 0, 1, 0, -0.999875, 0, -0.0158385, -131.995, 342.174, 179.332 )
 
-[node name="star159" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star159" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.721508, 0, 0.692406, 0, 1, 0, -0.692406, 0, -0.721508, -21.011, 342.174, 197.157 )
 
-[node name="star45" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star45" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.999978, 0, 0.0066217, 0, 1, 0, -0.0066217, 0, -0.999978, 68.4594, 342.174, 133.989 )
 
-[node name="star136" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star136" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( -0.708436, 0, -0.705775, 0, 1, 0, 0.705775, 0, -0.708436, 87.8444, 342.174, 22.8348 )
 
-[node name="star76" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star76" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.00921726, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00921726, 21.7106, 342.174, -69.6669 )
 
-[node name="star137" parent="level/stars" instance=ExtResource( 20 )]
+[node name="star137" parent="level/stars" instance=ExtResource( 21 )]
 transform = Transform( 0.716907, 0, -0.697168, 0, 1, 0, 0.697168, 0, 0.716907, -89.7425, 342.174, -87.2748 )
 
 [node name="mountains" type="Spatial" parent="level"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -149.059, 0 )
 
-[node name="mountain2" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain2" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( 200, 0, 0, 0, 200, 0, 0, 0, 200, -713.191, 55.0525, -307.71 )
 
-[node name="mountain3" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain3" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( 200, -2.43869e-05, 1.65767e-05, 2.43869e-05, 73.5896, -185.969, 1.65767e-05, 185.969, 73.5896, -713.191, 55.0525, 124.668 )
 
-[node name="mountain4" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain4" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( 200, -1.87493e-05, 4.45655e-05, 1.87493e-05, -139.847, -142.978, 4.45655e-05, 142.978, -139.847, -713.191, 55.0525, 672.395 )
 
-[node name="mountain5" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain5" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( 83.8778, -126.954, -129.797, -181.561, -58.6502, -59.9636, 2.93379e-05, 142.978, -139.847, -381.212, 55.0525, 672.395 )
 
-[node name="mountain6" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain6" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( -144.005, -97.0468, -99.2199, -67.6334, 173.922, -71.9514, 121.196, -18.2538, -158.046, 57.9009, 36.8744, 672.638 )
 
-[node name="mountain7" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain7" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( -153.425, 39.1644, -122.176, 42.0997, 195.277, 9.72988, 121.196, -18.2538, -158.046, 443.643, 36.8744, 672.638 )
 
-[node name="mountain8" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain8" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( -153.425, 39.1644, -122.176, 42.0997, 195.277, 9.72988, 121.196, -18.2538, -158.046, 693.909, 36.8744, 232.203 )
 
-[node name="mountain9" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain9" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( -153.425, 39.1644, -122.176, 42.0997, 195.277, 9.72988, 121.196, -18.2538, -158.046, 831.666, 36.8744, -99.5948 )
 
-[node name="mountain10" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain10" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( -153.425, 39.1644, -122.176, 118.564, 116.053, -111.688, 49.0234, -158.107, -112.245, 831.667, 36.8744, -540.313 )
 
-[node name="mountain11" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain11" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( -193.413, -48.0656, -16.7691, -13.7189, 112.658, -164.681, 49.0234, -158.107, -112.245, 458.707, 36.8744, -654.579 )
 
-[node name="mountain12" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain12" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( 26.1329, -109.333, 165.419, -192.13, -55.2134, -6.14032, 49.0234, -158.107, -112.245, 125.667, 36.8744, -654.58 )
 
-[node name="mountain13" parent="level/mountains" instance=ExtResource( 21 )]
+[node name="mountain13" parent="level/mountains" instance=ExtResource( 22 )]
 transform = Transform( 192.376, 25.1772, 48.5565, -54.4678, 71.9877, 178.469, 4.98936, -184.889, 76.1001, -337.587, 36.8744, -654.58 )
 
-[node name="moon" parent="level" instance=ExtResource( 22 )]
-transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, -163.77, 448.426, 883.384 )
+[node name="moon" parent="level" instance=ExtResource( 23 )]
+transform = Transform( 96.5926, 0, -25.8819, 0, 100, 0, 25.8819, 0, 96.5926, -163.77, 448.426, 883.384 )
 
 [node name="characters" type="Spatial" parent="level"]
+editor/display_folded = true
 
 [node name="bunny_side" type="Path" parent="level/characters"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.9999, 48, 2.28882e-05 )
@@ -1491,14 +1537,14 @@ curve = SubResource( 5 )
 [node name="PathFollow" type="PathFollow" parent="level/characters/bunny_side"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8858, 0.115929, 2.14926 )
 rotation_mode = 4
-script = ExtResource( 23 )
+script = ExtResource( 24 )
 hop_speed = 0.1
 
-[node name="bunnt" parent="level/characters/bunny_side/PathFollow" instance=ExtResource( 24 )]
+[node name="bunnt" parent="level/characters/bunny_side/PathFollow" instance=ExtResource( 25 )]
 transform = Transform( 0.2, 4.44093e-17, -7.45064e-10, 0, 0.2, 1.19209e-08, 7.45064e-10, -1.19209e-08, 0.2, -0.0129318, -0.247932, 0.147049 )
 
-[node name="Player" parent="." instance=ExtResource( 25 )]
-transform = Transform( 1, 3.01265e-08, 3.50751e-09, -3.01265e-08, 0.973252, 0.229738, 3.50751e-09, -0.229738, 0.973252, 43.5554, 72.4462, -57.0606 )
+[node name="Player" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 3.01265e-08, 3.50751e-09, -3.01265e-08, 0.973252, 0.229738, 3.50751e-09, -0.229738, 0.973252, 11.5554, 135.446, 39.9394 )
 
-[node name="test_rabbit" parent="." instance=ExtResource( 26 )]
+[node name="test_rabbit" parent="." instance=ExtResource( 27 )]
 transform = Transform( -0.0435779, 0, 0.498097, 0, 0.5, 0, -0.498097, 0, -0.0435779, -85.4129, 37.9754, -22.0067 )
