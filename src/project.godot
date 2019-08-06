@@ -16,13 +16,23 @@ _global_script_class_icons={
 [application]
 
 config/name="3d_2d_plat"
-run/main_scene="res://main_menu_debug.tscn"
+run/main_scene="res://make_profile.tscn"
 boot_splash/image="res://textures/ballman.png"
 config/icon="res://marble_test.png"
+
+[autoload]
+
+global="*res://global.gd"
+global_dialog="*res://global_dialog.gd"
 
 [debug]
 
 settings/crash_handler/message="That was probably Harrison's fault"
+
+[display]
+
+window/size/width=1080
+window/size/height=720
 
 [input]
 

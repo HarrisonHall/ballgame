@@ -73,6 +73,8 @@ var coin_count = 0
 
 var pause = false
 
+var in_dialogue = false
+
 func _ready():
 	rng.randomize()
 	start_trans = get_global_transform()

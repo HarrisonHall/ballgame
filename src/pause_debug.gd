@@ -4,9 +4,16 @@ var esc_held_time = 0
 var player
 var camera
 
+var view_distance
+var effect_level 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	view_distance = get_node("config/view distance")
+	effect_level = get_node("config/effect level")
+	
+	view_distance.value = global.view_distance
+	effect_level.value = global.effect_level
 
 
 func _process(delta):
@@ -20,9 +27,13 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		camera.mouse_captured = true
 		queue_free()
+		
+	global.view_distance = view_distance.value
+	global.effect_level = effect_level.value
 
 
 func _on_exit_pressed():
+	global._exit_tree()
 	get_tree().quit()
 
 

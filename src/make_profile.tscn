@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://make_profile.gd" type="Script" id=1]
+
+[node name="profile_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="profiles" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 75.1701
+margin_top = 269.021
+margin_right = -741.83
+margin_bottom = -155.979
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="profiles"]
+margin_bottom = 295.0
+size_flags_vertical = 3
+custom_constants/separation = 35
+alignment = 1
+
+[node name="new profile" type="Control" parent="."]
+margin_left = 701.385
+margin_top = 377.839
+margin_right = 959.385
+margin_bottom = 615.839
+
+[node name="TextEdit" type="TextEdit" parent="new profile"]
+margin_left = 50.831
+margin_top = 52.2161
+margin_right = 244.831
+margin_bottom = 78.2161
+text = "Profile Name"
+
+[node name="Button" type="Button" parent="new profile"]
+margin_left = 57.831
+margin_top = 95.2161
+margin_right = 133.831
+margin_bottom = 115.216
+text = "Make new"
+
+[node name="remove_save" type="Button" parent="new profile"]
+margin_left = 52.8797
+margin_top = 144.889
+margin_right = 166.88
+margin_bottom = 164.889
+text = "Delete Selected"
+
+[node name="play" type="Button" parent="."]
+margin_left = 450.0
+margin_top = 30.0
+margin_right = 598.0
+margin_bottom = 72.0
+text = "PLAY"
+
+[node name="EXIT" type="Button" parent="."]
+margin_left = 431.831
+margin_top = 528.648
+margin_right = 630.831
+margin_bottom = 566.648
+text = "EXIT"
+
+[node name="current_player" type="RichTextLabel" parent="."]
+margin_left = 449.0
+margin_top = 109.0
+margin_right = 598.0
+margin_bottom = 204.0
+[connection signal="tree_exiting" from="." to="." method="_on_profile_menu_tree_exiting"]
+[connection signal="pressed" from="new profile/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="new profile/remove_save" to="." method="_on_remove_save_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="EXIT" to="." method="_on_EXIT_pressed"]

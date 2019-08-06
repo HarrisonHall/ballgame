@@ -48,8 +48,13 @@ var level_start_hud
 
 var camera_spawn
 
+var orig_far = 0
+
 
 func _ready():
+	#orig_far = far
+	#print("far",far," ",orig_far," ", global.view_distance/5," ", far*(global.view_distance/5))
+	#far = orig_far*(global.view_distance/5)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam_body = get_node("../cam_body")
 	mouse_captured = true
@@ -91,6 +96,16 @@ func _ready():
 
 
 func _process(delta):
+	# Reset draw distance
+	if orig_far == 0:
+		orig_far = get_zfar()
+	else:
+		#print(get_zfar(), " zfar ", global.view_distance)
+		if get_zfar() != orig_far*(global.view_distance/5):
+			#print("reset cam")
+			#print(orig_far, " ", global.view_distance, float(global.view_distance) / 5)
+			set_zfar(orig_far*(float(global.view_distance)/5))
+	
 	last_delta = delta
 	if Input.is_action_just_pressed("ui_cancel"):
 		if len(cam_start_nodes) > 0:
@@ -229,24 +244,28 @@ func painting(level):
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene
-	print(path)
-	var current_scene = get_tree().get_root().get_child(0)
-	#print(current_scene.get_children()[0].get_name())
-
-	current_scene.queue_free()
-
-	# Load the new scene.
-	var s = ResourceLoader.load(path) #ResourceLoader.load(path)
-
-	# Instance the new scene.
-	var new_scene = s.instance()
-
-    # Add it to the active scene, as child of root.
-	get_tree().get_root().add_child(new_scene)
-
-    # Optionally, to make it compatible with the SceneTree.change_scene() API.
-	get_tree().set_current_scene(new_scene)
-	self.queue_free()
+#	print(path)
+#	var current_scene = get_tree().get_root().get_child(0)
+#	#print(current_scene.get_children()[0].get_name())
+#
+#	current_scene.queue_free()
+#
+#	# Load the new scene.
+#	var s = ResourceLoader.load(path) #ResourceLoader.load(path)
+#
+#	# Instance the new scene.
+#	var new_scene = s.instance()
+#
+#    # Add it to the active scene, as child of root.
+#	get_tree().get_root().add_child(new_scene)
+#
+#    # Optionally, to make it compatible with the SceneTree.change_scene() API.
+#	get_tree().set_current_scene(new_scene)
+#	self.queue_free()
+	#var current_scene = get_tree().get_root().get_child(0)
+	#current_scene.queue_free()
+	get_tree().change_scene(path)
+	queue_free()
 
 
 func camera_distance_decrease():

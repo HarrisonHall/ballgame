@@ -1,0 +1,29 @@
+{
+    "test1": {
+        "next": "test1",
+        "dialogue": "This is test dialogue",
+        "rel_cam_position": [0,1,0],
+        "picture": "res://marble_test.png",
+    },
+    "test2": {
+        "next": "test3",
+        "dialogue": "test2 dialogue",
+    },
+    "test3": {
+        "next": "test3 dialogue lol",
+        "dialogue": "test2",
+    },
+    "test4": {
+        "next": "test5",
+        "dialogue": "test4 dialogue",
+        "rel_cam_position": [1,1,1],
+    },
+    "test5": {
+        "stop": true,
+        "next": "test4",
+        "dialogue": "this is test5 dialogue,\ncool, right?",
+        "rel_cam_position": [4,1,4],
+    },
+
+    
+}
