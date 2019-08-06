@@ -148,6 +148,8 @@ func _process(delta):
 	if detach:
 		look_at_from_position(detach_pos, player_pos, Vector3(0,1,0))
 		next_level_timer -= delta
+	elif player.in_dialogue and player.look_dialogue:
+		look_at_from_position(player.dialogue_pos, player.dialogue_pos_look, Vector3(0,1,0))
 	else:
 		#look_at_from_position(pos, target, Vector3(0,1,0))
 		
@@ -176,6 +178,8 @@ func _input(event):
 		return
 	if detach:
 		look_at_from_position(detach_pos, player_pos, Vector3(0,1,0))
+		return
+	if player.in_dialogue:
 		return
 	pos = get_global_transform().origin
 	#var player_xform = get_node("../ball_sprite").get_global_transform()

@@ -13,9 +13,7 @@ func _ready():
 	
 
 func _process(delta):
-	print("snow ", global.effect_level)
 	if num_particles != orig_particles * (float(global.effect_level)/5):
 		num_particles = orig_particles * (float(global.effect_level)/5)
 		#snow.amount = num_particles
-		print(num_particles)
 		snow.set_amount(num_particles)

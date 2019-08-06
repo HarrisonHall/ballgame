@@ -1,27 +1,52 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://dialog.gd" type="Script" id=1]
 [ext_resource path="res://marble_test.png" type="Texture" id=2]
 
 [sub_resource type="SphereShape" id=1]
 
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+albedo_color = Color( 0, 0, 0, 0.509804 )
+
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 3 )
+
 [node name="dialog" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Area" type="Area" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-shape = SubResource( 1 )
-
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -525.0
+margin_top = -294.0
+margin_right = 523.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_left = 285.0
+margin_top = 24.0
+margin_right = 1045.0
+margin_bottom = 273.0
+color = Color( 0, 0, 0, 0.85098 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+anchor_bottom = 1.0
+margin_left = 376.964
+margin_top = 52.7208
+margin_right = 928.964
+margin_bottom = -44.2792
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = 39.234
-margin_top = 457.162
-margin_right = 2325.23
-margin_bottom = 2676.16
+anchor_bottom = 1.0
+margin_left = 24.234
+margin_top = 31.1622
+margin_right = 2310.23
+margin_bottom = 1966.16
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 100, 100 )
@@ -29,9 +54,15 @@ rect_scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
-margin_left = 391.964
-margin_top = 478.721
-margin_right = 943.964
-margin_bottom = 665.721
-[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
+[node name="area" type="Spatial" parent="."]
+
+[node name="Area" type="Area" parent="area"]
+
+[node name="CollisionShape" type="CollisionShape" parent="area/Area"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="area"]
+mesh = SubResource( 2 )
+material/0 = null
+[connection signal="body_entered" from="area/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="area/Area" to="." method="_on_Area_body_exited"]

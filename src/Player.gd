@@ -74,6 +74,9 @@ var coin_count = 0
 var pause = false
 
 var in_dialogue = false
+var look_dialogue = false
+var dialogue_pos
+var dialogue_pos_look
 
 func _ready():
 	rng.randomize()
@@ -128,7 +131,7 @@ func _process_physics(delta):
 	z_axis = z_axis.normalized()
 
 	# Movement (w/ momentum)
-	if is_on_floor():
+	if is_on_floor() and not in_dialogue:
 		if Input.is_action_pressed("ui_right"):
 			velocity += x_axis * movement_speed * delta
 			interaction_time = 0
@@ -141,7 +144,7 @@ func _process_physics(delta):
 		if Input.is_action_pressed("ui_down"):
 			velocity += z_axis * movement_speed * delta
 			interaction_time = 0
-	else:  # In air
+	elif not in_dialogue:  # In air
 		if Input.is_action_pressed("ui_right"):
 			velocity += x_axis * movement_speed * delta * air_friction_move
 			interaction_time = 0
@@ -154,9 +157,12 @@ func _process_physics(delta):
 		if Input.is_action_pressed("ui_down"):
 			velocity += z_axis * movement_speed * delta * air_friction_move
 			interaction_time = 0
+	elif in_dialogue:
+		momentum = Vector3(0,0,0)
+		velocity = Vector3(0,0,0)
 
 	# Jumping
-	if (Input.is_action_pressed("ui_jump")):
+	if (Input.is_action_pressed("ui_jump")) and not in_dialogue:
 		if is_on_floor() and Input.is_action_just_pressed("ui_jump"):
 			velocity.y += jump_height 
 			interaction_time = 0
@@ -209,7 +215,7 @@ func _process_physics(delta):
 	bounce()
 	
 	# Dash
-	if Input.is_action_just_pressed("ui_left_click"):
+	if Input.is_action_just_pressed("ui_left_click") and not in_dialogue:
 		if can_dash and dash_timer < 0:
 			if velocity.length() > 0:
 				var x_axis_dash = cam_xform.basis[0].normalized()
