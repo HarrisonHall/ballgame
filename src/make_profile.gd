@@ -28,8 +28,9 @@ func _process(delta):
 	
 	if global.save_profile in global.all_saves:
 		var txt = global.save_profile
-		txt += "\nSnow Globes: " + str(global.all_saves[global.save_profile]["snowglobes"])
-		txt += "\nStory %: " + str(global.all_saves[global.save_profile]["story_counter"])
+		txt += "\nSnow Globes: " + str(global.all_saves[global.save_profile].get("snowglobes",0))
+		txt += "\nStory %: " + str(global.all_saves[global.save_profile].get("story_counter","NULL"))
+		txt += "\nGems: " + str(global.all_saves[global.save_profile].get("gems",0))
 		text_box.set_text(txt)
 
 # Make new profile

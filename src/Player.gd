@@ -360,6 +360,7 @@ func teleport(some_vect):
 
 func increase_coin():
 	coin_count += 1
+	global.all_saves[global.save_profile]["gems"] = global.all_saves[global.save_profile].get("gems",0) + 1
 
 
 

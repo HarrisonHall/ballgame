@@ -1,0 +1,42 @@
+{
+    "test1": {
+        "next": "test1",
+        "dialogue": "This is test dialogue",
+        "rel_cam_position": [0,1,0],
+        "picture": "res://marble_test.png",
+    },
+    "test2": {
+        "next": "test3",
+        "dialogue": "test2 dialogue, sup dude",
+        "speed": 10,
+    },
+    "test3": {
+        "dialogue": "test3 dialogue lol\nthis is long on purpose\nhi\ndoes the newline work?",
+        "next": "test2",
+        "speed": 5,
+    },
+    "test4": {
+        "next": "test5",
+        "dialogue": "test4 dialogue",
+        "rel_cam_position": [1,1,1],
+        "auto": true,
+        "in_dialogue": true,
+        "picture": "dracula_ball.png",
+    },
+    "test5": {
+        "next": "test6",
+        "dialogue": "this is test5 dialogue,\ncool, right?",
+        "rel_cam_position": [4,1,4],
+        "in_dialogue": true,
+        "picture": "Celeste_Crystal_Heart.png",
+        "auto": true,
+    },
+    "test6": {
+        "stop": true,
+        "next": "test4",
+        "dialogue": "this is test6 dialogue,\nI've really outdone myself...\nAnd this can all be edited via a simple text file! yes YOU can edit dialogue too!",
+        "rel_cam_position": [10,30,10],
+        "in_dialogue": true,
+        "picture": "Celeste_Crystal_Heart.png",
+    },
+}
