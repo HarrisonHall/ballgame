@@ -12,7 +12,7 @@ var real_distance = camera_distance
 var camera_scroll_speed = 0.2
 var max_camera_distance = 12
 
-var camera_speed = .02
+var camera_speed = .016
 var mouse_captured = false
 
 var pitch = 0
@@ -166,7 +166,7 @@ func _process(delta):
 #			move_set_camera_to_real()
 		offset = (pos - target).normalized() * camera_distance
 		pos = target + offset
-		cam_body.move_and_slide((pos - cam_body.get_global_transform().origin)/delta, Vector3(0,0,0),false, 4, 0.7)
+		cam_body.move_and_slide((pos - cam_body.get_global_transform().origin)/delta, Vector3(0,0,0),false, 8, 0.7)
 		look_at_from_position(cam_body.get_global_transform().origin, target, Vector3(0,1,0))
 		#look_at_from_position(pos, target, Vector3(0,1,0))
 	if next_level_timer < 0:
@@ -233,7 +233,7 @@ func _input(event):
 	offset = (pos - target).normalized() * real_camera_distance
 	pos = target + offset
 	
-	cam_body.move_and_slide((pos - cam_body.get_global_transform().origin)/last_delta, Vector3(0,0,0), false, 4, 0.7)
+	cam_body.move_and_slide((pos - cam_body.get_global_transform().origin)/last_delta, Vector3(0,0,0), false, 8, 0.7)
 	look_at_from_position(cam_body.get_global_transform().origin, target, Vector3(0,1,0))
 	#look_at_from_position(pos, target, Vector3(0,1,0))
 

@@ -363,6 +363,5 @@ func increase_coin():
 	global.all_saves[global.save_profile]["gems"] = global.all_saves[global.save_profile].get("gems",0) + 1
 
 
-
-
-
+func _on_Player_tree_exiting():
+	global._exit_tree()

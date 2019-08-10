@@ -68,6 +68,13 @@ margin_left = 449.0
 margin_top = 109.0
 margin_right = 598.0
 margin_bottom = 204.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 488.951
+margin_top = 654.795
+margin_right = 698.951
+margin_bottom = 694.795
+text = "Fullscreen F11"
 [connection signal="tree_exiting" from="." to="." method="_on_profile_menu_tree_exiting"]
 [connection signal="pressed" from="new profile/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="new profile/remove_save" to="." method="_on_remove_save_pressed"]

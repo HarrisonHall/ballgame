@@ -32,6 +32,9 @@ func _process(delta):
 		txt += "\nStory %: " + str(global.all_saves[global.save_profile].get("story_counter","NULL"))
 		txt += "\nGems: " + str(global.all_saves[global.save_profile].get("gems",0))
 		text_box.set_text(txt)
+		
+	if Input.is_action_just_pressed("fullscreen"):
+		OS.window_fullscreen = not OS.window_fullscreen
 
 # Make new profile
 func _on_Button_pressed():
