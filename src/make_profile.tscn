@@ -29,10 +29,10 @@ margin_right = 959.385
 margin_bottom = 615.839
 
 [node name="TextEdit" type="TextEdit" parent="new profile"]
-margin_left = 50.831
-margin_top = 52.2161
-margin_right = 244.831
-margin_bottom = 78.2161
+margin_left = 55.831
+margin_top = 48.2161
+margin_right = 249.831
+margin_bottom = 74.2161
 text = "Profile Name"
 
 [node name="Button" type="Button" parent="new profile"]
@@ -43,10 +43,10 @@ margin_bottom = 115.216
 text = "Make new"
 
 [node name="remove_save" type="Button" parent="new profile"]
-margin_left = 52.8797
-margin_top = 144.889
-margin_right = 166.88
-margin_bottom = 164.889
+margin_left = 57.8797
+margin_top = 141.889
+margin_right = 171.88
+margin_bottom = 161.889
 text = "Delete Selected"
 
 [node name="play" type="Button" parent="."]

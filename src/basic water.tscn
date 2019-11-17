@@ -4,7 +4,7 @@
 code = "shader_type spatial;
 
 uniform vec4 out_color : hint_color = vec4(0., 0.2, 1.0, 1.0);
-uniform float amount : hint_range(0.2, 1.5) = 0.4;
+uniform float amount : hint_range(0.2, 1.5) = 0.2;
 uniform float beer_factor = 0.2;
 
 float generateOffset(float x, float z, float val1, float val2, float time){
