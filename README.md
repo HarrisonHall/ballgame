@@ -8,7 +8,7 @@ a marble-like ball.
 
 Coming from gamemaker I cannot recommend Godot enough. While
 it isn't commercially competitive for 3D due to speed among
-other reasons, it is still amazingly intuitive to work with. 
+other reasons, it is still beyond intuitive to work with. 
 
 ### Demo
 While the title is underwelming it has a few cool features.
@@ -29,7 +29,7 @@ The painting (not original artwork) is mario 64-style in that
 the player can jump through and enter the first level.
 
 The first level has a cool intro where the camera moves around
-the level showing everything off al la super mario. 
+the level showing everything off a la super mario. 
 ![1](media/blizzardo1.png)
 ![2](media/blizzardo2.png)
 The intention for the peak was to lead to another sublevel. 
