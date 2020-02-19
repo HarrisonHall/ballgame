@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://base_platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tree.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://jaw_model.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ballman.tscn" type="PackedScene" id=8]
 [ext_resource path="res://moving_platform.tscn" type="PackedScene" id=9]
-[ext_resource path="res://g_sign.tscn" type="PackedScene" id=10]
 [ext_resource path="res://speed_boost.tscn" type="PackedScene" id=11]
 [ext_resource path="res://cockzilla.tscn" type="PackedScene" id=12]
 [ext_resource path="res://teleporter.tscn" type="PackedScene" id=13]
@@ -200,9 +199,6 @@ move_side_velocity = Vector3( 2, 0, 0 )
 [node name="large platform10" parent="level/ground" instance=ExtResource( 4 )]
 transform = Transform( 0.15, 0, 0, 0, 2, 0, 0, 0, 0.1, 2.63424, 32.6636, 0.170269 )
 
-[node name="Spatial5" parent="level/ground" instance=ExtResource( 10 )]
-transform = Transform( 0.00377703, 0, -0.0297613, 0, 0.4, 0, 0.0198409, 0, 0.00251802, 2.85731, 34.3949, 0.170269 )
-
 [node name="large platform16" parent="level/ground" instance=ExtResource( 4 )]
 transform = Transform( 0.15, 0, 0, 0, 2, 0, 0, 0, 0.1, 2.63424, 37.0027, 0.170269 )
 
@@ -245,7 +241,6 @@ transform = Transform( -0.0997836, 0.000226848, -0.00617107, 0, 0.0938593, 0.345
 boost = 1.7
 
 [node name="zilla" parent="level/ground" instance=ExtResource( 12 )]
-editor/display_folded = true
 transform = Transform( -0.0650499, 0, -0.0759507, 0, 1, 0, 0.0506338, 0, -0.0433666, -2.2744, 0.428858, -2.56289 )
 
 [node name="teleporter" parent="level/ground/zilla" instance=ExtResource( 13 )]
@@ -340,7 +335,6 @@ transform = Transform( -0.0284077, 0, -0.999596, 0, 1, 0, 0.999596, 0, -0.028407
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62819, 1.84077, 2.05087 )
 
 [node name="base" parent="." instance=ExtResource( 32 )]
-editor/display_folded = true
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 16.3086, 11.6223, 70.4273 )
 
 [node name="teleporter" parent="base" instance=ExtResource( 13 )]
